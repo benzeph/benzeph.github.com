@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset=utf-8/>
-	<title>Hello, I'm Zeph.</title>
-
+	<title>Zeph's Blog</title>
+	<meta name="description" content="BenZeph" />
 	<style id="jsbin-css">
 		div, span {
 			margin: 0;
 			padding: 0;
 			font-weight: bold;
 			font: bold 16px Arial, sans-serif;
-			/*禁止选中文本*/
+
 			-moz-user-select: none;
 			-webkit-user-select: none;
 			-o-user-select: none;
@@ -94,6 +93,7 @@
 	</style>
 </head>
 <body>
+
 <div id="calculator">
 	<div class="head">
 		<span class="clear">c</span>
@@ -129,7 +129,6 @@
 				var oNumVal = this.innerHTML;
 				var num1, num2 = null;
 				num1 = oShowVal;
-				//判断按键
 				if (oNumVal == "c") {
 					oShow.innerHTML = "";
 				}
