@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Zeph's Blog</title>
+	<link rel="stylesheet" type="text/css" media="screen,projection" href="css/ez-min.css">
+	<link rel="stylesheet" type="text/css" href="css/zeph.css">
+	<link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="stylesheet" href="css/shCoreDefault.css"/>
+	<script type="text/javascript" src="javascript/shCore.js"></script>
+	<script type="text/javascript" src="javascript/shBrushJScript.js"></script>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.bloggerMode = true;
+		SyntaxHighlighter.all();
+	</script>
+</head>
+<body>
+<div class="ez-wr">
+<div class="ez-box">
+	<div id="logo">
+		<a href="index.html">Zeph's Blog</a>
+	</div>
+</div>
+<div class="ez-box">
+	<!-- Module 2A -->
+	<div class="ez-wr">
+		<div class="ez-fl ez-negmr ez-15">
+			<div class="ez-box">
+				<ol>
+					<li class="li-ns"><a href="catalog-git.html">Git(1)</a></li>
+					<li class="li-ns"><a href="catalog-gradle.html">Gradle(1)</a></li>
+				</ol>
+			</div>
+		</div>
+		<div class="ez-last ez-oh">
+			<div class="ez-box">
+				<div class="article">
+					<blockquote>
+						<h1>Gradle使用指南（译）</h1>
+
+						<p><em>本文中的内容来自Gradle User Guide，由于本人英文水平有限，所以部分翻译内容可能不准确。</em></p>
+
+						<p><strong>Gradle提供</strong></p>
+
+						<p>1.一个像ant一样，通用的灵活的构建工具。</p>
+
+						<p>2.一种可切换的，像maven一样的基于约定的构建框架，却又从不锁住你。</p>
+
+						<p>3.对多项目构建的强大支持。</p>
+
+						<p>4.强大的依赖管理（基于Apache Ivy）。</p>
+
+						<p>5.全力支持已有的Maven或者Ivy仓库基础建设。</p>
+
+						<p>6.支持传递性依赖管理，在不需要远程仓库或者pom.xml或者ivy配置文件的前提下。</p>
+
+						<p>7.ant的任务和构建是gradle的一等公民。</p>
+
+						<p>8.基于groovy脚本构建，其build脚本使用groovy语言编写。</p>
+
+						<p>9.具有广泛的领域模型支持你的构建。</p>
+
+						<p><strong>前提条件：</strong></p>
+
+						<p>1.官方网站下载Gradle：http://www.gradle.org/downloads</p>
+
+						<p>2.安装Gradle</p>
+
+						<p>3.添加GRADLE_HOME/bin到环境变量</p>
+
+						<p>4.在命令行中输入：gradle –v，测试是否安装成功</p>
+					</blockquote>
+					<blockquote>
+						<p><strong>6 Build Script Basics（构建脚本基础）</strong></p>
+
+						<p><strong>6.1 Projects和Task</strong></p>
+						<blockquote>
+							<p>在Gradle中有两个概念：projects 和 tasks。<br/></p>
+
+							<p>
+								每一个Gradle都是由一个或者多个project组成。而一个project代表着你的软件中能够被构建的一些组件。一个Project具体是什么意思，取决于你构建的内容。例如，一个project可以是一个jar文件或者一个web应用，也可以是一个由其他project产生的多个jar文件的分发zip包。一个project不一定要代表这一个要被构建的东西。也可能是一件要做的事情，例如部署你的应用或者产品环境。如果你觉得这里有点模糊，不用担心。Gradle基于约定的构建支持给一个project添加了一个更具体的定义。<br/>
+							</p>
+
+							<p>
+								每一个project是有一个或多个task组成。一个task代表着一个构建平台的一些原子性工作。它可能是编译一些类，创建一个jar包，生成javadoc，或者发布某些构件内容到仓库。</p>
+						</blockquote>
+					</blockquote>
+					<blockquote>
+						<p><strong>6.2 Helloworld</strong></p>
+						<blockquote>
+							<p>
+								通过命令“gradle”运行一个Gradle构建。这个命令会去当前文件夹寻找一个叫做build.gradle的文件。创建一个叫做build.gradle的文件，它是一个构建配置脚本，在里面输入以下内容：</p>
+						</blockquote>
+							<pre class="brush: js;">
+							task hello {
+								doLast {
+									println 'Hello world!'
+								}
+							}
+							</pre>
+					</blockquote>
+					<blockquote>
+						<blockquote>
+							<p>在命令行中，进入到脚本文件的目录，输入：gradle -q hello</p>
+
+							<p>输出结果是：Hello world。</p>
+
+							<p>
+								这个构建脚本定义了一个单独的名为hello的task，并给它添加了执行的动作。这个动作是一个括号，里面包含了待执行的Groovy代码。如果你觉得它有点像ant的target，好吧，你对了。Gradle的task等同于Ant的target，但是正如你所看到的，比ant更强大。</p>
+						</blockquote>
+					</blockquote>
+					<blockquote>
+						<p><strong>6.3 定义task的快捷方式</strong></p>
+							<pre class="brush: js;">
+							task hello << {
+								println 'Hello world!'
+							}
+							</pre>
+						<blockquote>
+							<p>一样，这里定义了一个叫做hello的task。只有一个括号。这也是一种常用的写法。</p>
+						</blockquote>
+					</blockquote>
+					<blockquote>
+						<p><strong>6.4 Build scripts are code（脚本就是代码）</strong></p>
+						<blockquote>
+							<p>Gradle脚本向你展示了Groovy的强大，就像开胃菜一样。看看下面这个：</p>
+						</blockquote>
+								<pre class="brush: js;">
+									task upper << {
+										String someString = 'mY_nAmE'
+										println "Original: " + someString
+										println "Upper case: " + someString.toUpperCase()
+									}
+								</pre>
+						<blockquote>
+							<p>输入命令“gradle -q upper”，输出结果：</p>
+
+							<p>Original: mY_nAmE </p>
+
+							<p>Upper case: MY_NAME</p>
+
+							<p>又如：</p>
+						</blockquote>
+								<pre class="brush: js;">
+									task count << {
+										4.times { print "$it " }
+									}
+								</pre>
+						<blockquote>
+							<p>输出：0 1 2 3</p>
+						</blockquote>
+					</blockquote>
+					<blockquote>
+						<p><strong>6.5 Task dependencies（Task的依赖）</strong></p>
+
+						<blockquote>
+							<p>你可能会猜到，可以在task间声明依赖。例如：</p>
+						</blockquote>
+							<pre class="brush: js;">
+									task hello << {
+										println 'Hello world!'
+									}
+									task intro(dependsOn: hello) << {
+										println "I'm Gradle"
+									}
+								</pre>
+						<blockquote>
+							<p>输出：</p>
+
+							<p>Hello world!</p>
+
+							<p>I'm Gradle</p>
+
+							<p>添加一个依赖，相关的task不一定要在它之前存在。例如：</p>
+						</blockquote>
+							<pre class="brush: js;">
+									task taskX(dependsOn: 'taskY') << {
+										println 'taskX'
+									}
+									task taskY << {
+										println 'taskY'
+									}
+							</pre>
+						<blockquote>
+							<p>输出：</p>
+
+							<p>taskY</p>
+
+							<p>taskX</p>
+
+							<p>taskX对taskY的依赖在taskY声明之前就定义了。这一点对于多project构建很重要。</p>
+						</blockquote>
+					</blockquote>
+					<blockquote>
+						<p> <strong>6.6 Dynamic tasks（动态的task）</strong></p>
+
+						<blockquote>
+							<p>Groovy不仅可以定义一个task做什么事情。例如，你可以用它来动态的创建一个新的task。</p>
+						</blockquote>
+							<pre class="brush: js;">
+								4.times { counter ->
+									task "task$counter" << {
+										println "I'm task number $counter"
+									}
+								}
+							</pre>
+						<blockquote>
+							<p>使用命令“gradle -q task1”</p>
+
+							<p>输出：</p>
+
+							<p>I'm task number 1</p>
+
+							<p>使用命令“gradle -q task2”</p>
+
+							<p>输出：</p>
+
+							<p>I'm task number 2</p>
+						</blockquote>
+					</blockquote>
+				</div>
+				<div class="article">
+					<blockquote>
+						<p><strong>6.7. Manipulating existing tasks（操作存在的task）</strong></p>
+						<blockquote>
+							<p>一旦task被创建，可以通过api访问。这一点和ant不同。例如，你可以创建一个额外的依赖：</p>
+						</blockquote>
+							<pre class="brush: js;">
+								task0.dependsOn task2, task3
+							</pre>
+						<blockquote>
+							<p>输出：</p>
+
+							<p>I'm task number 2</p>
+
+							<p>I'm task number 3</p>
+
+							<p>I'm task number 0</p>
+
+							<p>或者你可以添加一个行为给一个存在的task。</p>
+						</blockquote>
+							<pre class="brush: js;">
+								task hello << {
+									println 'Hello Earth'
+								}
+								hello.doFirst {
+									println 'Hello Venus'
+								}
+								hello.doLast {
+									println 'Hello Mars'
+								}
+								hello << {
+									println 'Hello Jupiter'
+								}
+							</pre>
+						<blockquote>
+							<p>输入命令“gradle -q hello”</p>
+
+							<p>输出：</p>
+
+							<p>Hello Venus</p>
+
+							<p>Hello Earth</p>
+
+							<p>Hello Mars</p>
+
+							<p>Hello Jupiter</p>
+
+							<p>
+								doFirst和doLast能够被执行多次。在task的action列表的开始和最后都添加了一个action。当task执行，action列表中的action会被顺序执行。操作符&lt;&lt;是doLast的别名。</p>
+						</blockquote>
+					</blockquote>
+					<blockquote>
+					  <p><strong>6.8 Shortcut notations（快捷标记）</strong></p>
+					  
+					  <blockquote>
+					    <p>就像你之前看到例子一样，有一个便捷的标记可以访问一个存在的task。每一个task都可以用，就像build脚本的一个属性。</p>
+					    </blockquote>
+							<pre class="brush: js;">
+								task hello << {
+									println 'Hello world!'
+								}
+								hello.doLast {
+									println "Greetings from the $hello.name task."
+								}
+							</pre>
+						<blockquote>
+					    <p>输出:</p>
+					    
+					    <p>Hello world!</p>
+					    
+					    <p>Greetings from the hello task.</p>
+					    
+					    <p>这样可以使代码非常美观，特别是当你使用由plugin提供的task时。</p>
+					  </blockquote>
+					</blockquote>
+					<blockquote>
+					  <p><strong>6.9 Extra task properties（其他task属性）</strong></p>
+					  
+					  <blockquote>
+					    <p>你可以给一个task添加你自己属性。例如，添加一个属性myProperty,，给ext.myProperty设置一个初始值。从这时开始，这个属性可以被get和set就像预定义task属性。</p>
+					    </blockquote>
+							<pre class="brush: js;">
+								task myTask {
+									ext.myProperty = "myValue"
+								}
+								task printTaskProperties << {
+									println myTask.myProperty
+								}
+							</pre>
+						<blockquote>
+					    <p>输出：</p>
+					    
+					    <p>myValue</p>
+					  </blockquote>
+					</blockquote>
+					<blockquote>
+						<p><strong>6.10 Using Ant Tasks</strong></p>
+						  
+						<p><strong>6.12 Default tasks</strong></p>
+						  
+						<blockquote>
+							 <p>Gradle允许你去给你的构建定义一个或者多个默认的task。</p>
+						    
+						     <p>输入命令“gradle -q”</p>
+						</blockquote>
+							<pre class="brush: js;">
+								defaultTasks 'clean', 'run'
+								task clean << {
+									println 'Default Cleaning!'
+								}
+								task run << {
+									println 'Default Running!'
+								}
+								task other << {
+									println "I'm not a default task!"
+								}
+							</pre>
+						<blockquote>    
+						     <p>输出是</p>
+						    
+						     <p>Default Cleaning!</p>
+						    
+						     <p>Default Running!</p>
+						    
+						     <p>这个等同于gradle clean run的命令。在多project构建中，每个子project都能够有他们自己指定的默认task。如果一个子project没有指定默认的task，就会用它父project的默认task。</p>
+						</blockquote>
+						  
+						<p><strong>6.13 Configure by DAG</strong></p>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="ez-box">
+	<div id="contact">
+			<a href="https://github.com/benzeph">BenZeph·Github·2013</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+a {
+    text-decoration: none;
+}
+
+.article-list {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.abstract {
+
+}
+
+.article{
+    text-align: left;
+}
+
+.li-ns {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+#logo {
+    font-family: 'Gabriela', serif;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-left: 15%;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#contact{
+    margin-top: 100px;
+}
