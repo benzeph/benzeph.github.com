@@ -1,5 +1,46 @@
-a {
+.darkgrey-link:link{
     text-decoration: none;
+    color: #404040;
+}
+
+.darkgrey-link:visited{
+    text-decoration: none;
+    color: #404040;
+}
+
+.darkgrey-link:hover{
+    text-decoration: none;
+    color: #404040;
+}
+
+.black-link:link {
+    text-decoration: none;
+    color: #000000;
+}
+
+.black-link:visited{
+    text-decoration: none;
+    color: #000000;
+}
+
+.black-link:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+.grey-link:link{
+    text-decoration: none;
+    color: #626262;
+}
+
+.grey-link:visited{
+    text-decoration: none;
+    color: #626262;
+}
+
+.grey-link:hover{
+    text-decoration: none;
+    color: #626262;
 }
 
 .article-list {
@@ -13,7 +54,8 @@ a {
 }
 
 .abstract {
-
+    margin-top: 5px;
+    color: #404040;
 }
 
 .article{
