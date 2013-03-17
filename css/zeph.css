@@ -1,3 +1,15 @@
+.purple-link:link{
+      text-decoration: none;
+    color: #a0008b;
+}
+.purple-link:visited{
+      text-decoration: none;
+    color: #a0008b;
+}
+.purple-link:hover{
+      text-decoration: none;
+    color: #a0008b;
+}
 .darkgrey-link:link{
     text-decoration: none;
     color: #404040;
