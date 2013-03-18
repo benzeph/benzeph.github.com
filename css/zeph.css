@@ -1,13 +1,13 @@
 .purple-link:link{
-      text-decoration: none;
+    text-decoration: none;
     color: #a0008b;
 }
 .purple-link:visited{
-      text-decoration: none;
+    text-decoration: none;
     color: #a0008b;
 }
 .purple-link:hover{
-      text-decoration: none;
+    text-decoration: none;
     color: #a0008b;
 }
 .darkgrey-link:link{
@@ -80,6 +80,10 @@
     margin-bottom: 5px;
 }
 
+.image{
+    text-align: left;
+}
+
 #logo {
     font-family: 'Gabriela', serif;
     font-size: 30px;
@@ -98,4 +102,9 @@
     width: 90%;
     margin: 5px auto;
     margin-top: 15px;
+}
+
+#about-me{
+    text-align: left;
+    margin-left: 20px;
 }
