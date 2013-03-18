@@ -80,6 +80,7 @@
 							<div class="ez-box">
 								<ul>
 									<li class="li-ns"><a href="#Build Script Basics" class="purple-link">1.Build Script Basics（构建脚本基础）</a></li>
+									<li class="li-ns"><a href="#Java Quickstart" class="purple-link">2.Java Quickstart（使用Java）</a></li>
 								</ul>
 							</div>
 						</div>
@@ -365,6 +366,225 @@
 							</blockquote>
 							  
 							<p><strong>6.13 Configure by DAG</strong></p>
+						</blockquote>
+						<blockquote>
+							<p id="Java Quickstart"><strong>7 Java Quickstart（使用Java）</strong></p>
+						    <p><strong>7.1 The Java plugin(Java插件)</strong></p>
+						  
+						    <blockquote>
+							    <p>正如我们所看到的，Gradle是一个通用构建工具。他可以构建很多想要在构建脚本中实现的东西。但是你必须要将相关代码添加到你的脚本中。</p>
+							    
+							    <p>大部分java项目只需走基本流程：编译你的java源代码，运行一些测试用例，创建一个包含有你class的jar文件。如果你不需要为每一个项目配置这样的代码，那该有多好。幸运的是，你确实不需要这么做，Gradle通过使用plugin的方式解决这个问题。一个plugin是Gradle的扩展，它以某种方式配置你的项目，通常是添加一些预配置task，这些task集中在一起做一些有用的事情。Gradle装载了一些plugin，你也可以简单的写你自己的plugin，并和其他人分享。其中一种plugin就是Java Plugin。这个plugin添加了一些task到你的项目，它会编译和测试你的java代码，并打包成jar文件。</p>
+							    
+							    <p>Java Plugin是基于约定的。这意味着这个plugin为你的项目的许多方面都定义了默认值，例如Java源代码的位置。如果你依循这些约定，你通常不需要做太多的事情就可以得到一个非常好用的构建。Gradle也允许你定制项目，如果你不想或不能依循这些约定。</p>
+						    </blockquote>
+						</blockquote>
+						<blockquote>
+							<p><strong>7.2 A basic Java project(一个基本的Java的项目)</strong></p>
+							  
+							<blockquote>
+							    <p>看例子，如果你要是使用java，需要添加以下的代码：</p>
+							</blockquote>
+								<pre class="brush: js;">
+									apply plugin: 'java'
+								</pre>
+							<blockquote>    
+							    <p>这就是要定义一个java项目，你所要做的事情。它会将Java的plugin添加到你的项目，即给你的项目添加一些task。</p>
+							    
+							    <p>Gradle希望可以在src/main/java目录下找到你的源代码在src/test/java下找到你的测试用例。另外，任何存放在src/main/resources下的文件都会打包到jar中。任何存放在src/test/resources中的文件都会用来运行测试。所有的输出文件都在build目录下，而jar文件就存放在build/libs目录。</p>
+							</blockquote>
+						</blockquote>
+						<blockquote>
+						  <p><strong>7.2.1 Building the project（构建项目）</strong></p>
+						  	<blockquote>
+							    <p>Java的plugin会添加一些task到你的项目中。然而，只有少量的一些task你会用到去构建你的项目。最常用到的task是build task，它会完成对整个项目的build任务。当你运行gradle build，gradle会编译和测试你的代码，并创建一个包含main和resource的jar文件。</p>
+							    
+							    <p>输入命令“gradle build”</p>
+							    
+							    <p>输出：</p>
+							    
+							    <p>:compileJava</p>
+							    
+							    <p>:processResources</p>
+							    
+							    <p>:classes</p>
+							    
+							    <p>:jar</p>
+							    
+							    <p>:assemble</p>
+							    
+							    <p>:compileTestJava</p>
+							    
+							    <p>:processTestResources</p>
+							    
+							    <p>:testClasses</p>
+							    
+							    <p>:test</p>
+							    
+							    <p>:check</p>
+							    
+							    <p>:build</p>
+							    
+							    <p>BUILD SUCCESSFUL</p>
+							    
+							    <p>Total time: 1 secs</p>
+							    
+							    <p>其他比较有用的task还有：</p>
+							    
+							    <p>clean：删除build目录，移除所有文件。</p>
+							    
+							    <p>assemble：编译和打包你的代码，但是不运行测试。其他插件可能会添加更多的构建到这个task中。例如，如果你要使用War的plugin，这个task会为你的项目构建War文件。</p>
+							    
+							    <p>check：编译和测试你的代码。其他插件可能会添加更多检测到这个task。例如，如果你使用Code-quality的plugin，这个任务还会运行代码风格检查。</p>
+						  	</blockquote>
+						</blockquote>
+						<blockquote>
+							<p><strong>7.2.2 External dependencies（外部依赖）</strong></p>
+							  
+							<blockquote>
+							    <p>通常，一个java项目还会需要对额外jar包需求的依赖。要将jar文件引入到你的项目，你必须告诉gradle在哪里可以找到它。在Gradle中，像jar包这种构建，都是放在仓库中。仓库可以用来获取一个项目的依赖的位置，或者发布一个项目的构建的位置。例如，使用公共的Maven仓库。</p>
+							</blockquote>
+								<pre class="brush: js;">
+									repositories {
+										mavenCentral()
+									}
+								</pre>
+							<blockquote>    
+							    <p>让我们来添加一些依赖。这里，我们声明一个我们的产品类需要一个编译期的依赖commons collections，测试类也需要一个编译期的类junit。</p>
+							</blockquote>
+								<pre class="brush: js;">
+									dependencies {
+										compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+										testCompile group: 'junit', name: 'junit', version: '4.+'
+									}
+								</pre>
+							<blockquote>    
+							</blockquote>
+						</blockquote>
+						<blockquote>
+							<p><strong>7.2.3 Customising the project（定制项目）</strong></p>
+							  
+							<blockquote>
+							    <p>Java的plugin会添加很多属性到你的项目中。这些属性都有默认的值，通常是够用的。如果你觉得不合适，你可以很方便的修改它们。举个例子，这里，我们为我们的java项目指定一个版本号，对jar清单添加一些属性。</p>
+							</blockquote>
+								<pre class="brush: js;">
+									sourceCompatibility = 1.5
+									version = '1.0'
+									jar {
+										manifest {
+											attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+										}
+									}
+								</pre>
+							<blockquote>    
+							    <p>Java的plugin添加的task都是一些常规task，跟将它们直接定义在build文件中一样。这意味着你可以使用之前章节学到的机制去定制task。例如你可以设置一个task的属性，给一个task添加行为，修改一个task的依赖，或者完全替代一个task。在我们的例子中，我们会配置一个test task，它是Test类型，以便在测试时，添加一些系统属性。</p>
+							</blockquote>
+							<pre class="brush: js;">
+								test {
+									systemProperties 'property': 'value'
+								}
+							</pre>
+						</blockquote>
+						<blockquote>
+							<p><strong>7.2.4 Publishing the JAR file（发布Jar）</strong></p>
+							  
+							<blockquote>
+							    <p>通常Jar包都是要发布到某一个位置。要完成这件事，你需要告诉Gradle在哪里发布。在Gradle中，像jar文件这样的构建都是发布到仓库中。在我们的例子中，我们将会发布到一个本地的仓库。你也可以发布到远程仓库或者多个仓库中：</p>
+							</blockquote>
+								<pre class="brush: js;">
+									uploadArchives {
+										repositories {
+											flatDir {
+												dirs 'repos'
+											}
+										}
+									}
+								</pre>
+							<blockquote>        
+							    <p>运行命令“gradle uploadArchives.”</p>
+							</blockquote>
+						</blockquote>
+						<blockquote>
+							<p><strong>7.2.5 Creating an Eclipse project（创建一个Eclipse项目）</strong></p>
+							  
+							<blockquote>
+							    <p>要想导入项目到Eclipse，你需要添加另一个plugin到build文件：build.gradle</p>
+							</blockquote>
+								<pre class="brush: js;">
+									apply plugin: 'eclipse'
+								</pre>
+							<blockquote>           
+							    <p>执行“gradle eclipse”命令</p>
+							</blockquote>
+						</blockquote>	
+						<blockquote>
+							<p><strong>7.3 Multi-project Java build（多项目构建）</strong></p>
+							  
+							<blockquote>
+							    <p>现在，让我们来看看一个典型的多project构建。下面是项目的层次。</p>
+							    
+							    <p>multiproject/</p>
+							    
+							    <p>api/</p>
+							    
+							    <p>services/webservice/</p>
+							    
+							    <p>shared/</p>
+							    
+							    <p>这里有三个project。Project api产生一个jar文件，它会传递给客户端为你的XML的webservice提供一个Java客户端。Project webservice是一个返回XML的webapp。Project shared包含api和webservice使用的代码。</p>
+						    </blockquote>
+						</blockquote>
+						<blockquote>
+						  	<p><strong>7.3.1 Defining a multi-project build（定义一个多项目构建）</strong></p>
+						  
+						  	<blockquote>
+						    	<p>要定义一个多project，你需要创建一个settings file。这个“设置文件”放在源代码树的根目录下，并指定哪些项目需要构建。这个文件必须叫做“settings.gradle”。例如，我们使用一个简单的继承结构。相关文件如下:</p>
+						    </blockquote>
+							<pre class="brush: js;">
+								include "shared", "api", "services:webservice", "services:shared"
+							</pre>
+						</blockquote>	
+						<blockquote>
+							<p><strong>7.3.2 Common configuration（公共配置）</strong></p>
+							  
+							<blockquote>
+							    <p>对于大多数多project的构建，存在一些所有project共同的配置。在我们的例子中，我们会定义这些公共配置在项目的根目录，使用一个技术叫做“configuration injection，配置注入”。这里，根项目就像一个容器，subprojects方法会迭代这个容器中的元素（实例中的project），并注入指定的配置。这样我们可以简单的为所有的构建定义清单内容和一些共同的依赖。</p>
+							    <P>Build.gradle</P>
+							</blockquote>
+								<pre class="brush: js;">
+									subprojects {
+										apply plugin: 'java'
+										apply plugin: 'eclipse-wtp'
+										repositories {
+											mavenCentral()
+										}
+										dependencies {
+											testCompile 'junit:junit:4.11'
+										}
+										version = '1.0'
+										jar {
+											manifest.attributes provider: 'gradle'
+										}
+									}
+								</pre>
+							<blockquote>    
+							    <p>注意到，我们的项目中应用了Java Plugin。这意味着我们在之前的部分看到的task和配置属性都可以在每一个子project中使用。所以，你可以从project的根目录通过“gradle build”命令进行编译，测试和打包。</p>
+							</blockquote>
+						</blockquote>
+						<blockquote>
+							<p><strong>7.3.3 Dependencies between projects（项目间的依赖）</strong></p>
+							  
+							<blockquote>
+							    <p>你可以在同一个build中为多个project添加依赖，例如，一个项目的jar文件，被用来给另一个项目编译。在api的build文件中，我们添加了一个由shared产生的jar文件作为依赖。因为这个依赖，Gradle会确保shared会在的api之前完成build。</p>
+							</blockquote>
+							<pre class="brush: js;">
+								dependencies {
+									compile project(':shared')
+								}		
+							</pre>
+						</blockquote>
+						<blockquote>
+							<p><strong>7.3.4 Creating a distribution</strong></p>
 						</blockquote>
 					</div>
 				</div>
