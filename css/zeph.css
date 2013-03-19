@@ -40,6 +40,37 @@
     color: #000000;
 }
 
+.black-underline-link:link {
+    text-decoration: none;
+    color: #000000;
+}
+
+.black-underline-link:visited{
+    text-decoration: none;
+    color: #000000;
+}
+
+.black-underline-link:hover{
+    text-decoration:underline; 
+    color: #000000;
+}
+
+.black-orange-link:link {
+    text-decoration: none;
+    color: #000000;
+}
+
+.black-orange-link:visited{
+    text-decoration: none;
+    color: #000000;
+}
+
+.black-orange-link:hover{
+    text-decoration: none;
+    color: #ff6c00;
+}
+
+
 .grey-link:link{
     text-decoration: none;
     color: #626262;
@@ -95,6 +126,8 @@
 }
 
 #contact{
+    margin-left: 15%;
+    text-align: left;
     margin-top: 100px;
 }
 
