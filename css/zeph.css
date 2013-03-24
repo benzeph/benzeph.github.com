@@ -122,9 +122,13 @@
     margin-left: 15%;
     text-align: left;
     margin-top: 30px;
-    margin-bottom: 50px;
 }
-
+#motto{
+    text-align: left;
+    margin-left: 15%;
+    margin-bottom: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
 #contact{
     margin-left: 15%;
     text-align: left;
