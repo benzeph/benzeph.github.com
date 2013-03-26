@@ -112,7 +112,8 @@
     margin-bottom: 5px;
 }
 
-.image{
+#about-me-image{
+    margin-top: 10px;
     text-align: left;
 }
 
@@ -142,7 +143,7 @@
     margin-top: 15px;
 }
 
-#about-me{
+#about-me-text{
     text-align: left;
     margin-left: 20px;
 }
