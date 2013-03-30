@@ -97,6 +97,7 @@
 .li-ns {
     list-style: none;
     text-align: left;
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 5px;
 }
 #search-box{
