@@ -11,6 +11,14 @@
 	<link rel="stylesheet" type="text/css" href="css/zeph.css">
 	<link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/harvesthq.chosen/chosen.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+	<script src='css/harvesthq.chosen/chosen.jquery.js'></script>
+	<script>
+		jQuery(document).ready(function(){
+			jQuery(".chosen").data("placeholder","Select Frameworks...").chosen();
+		});
+	</script>
 </head>
 <body>
 <div class="ez-wr">
@@ -33,9 +41,10 @@
 						<li class="li-ns"><a href="html/catalog-gradle.html" class="grey-link">Gradle(1)</a></li>
 						<li class="li-ns"><a href="html/catalog-design-pattern.html" class="grey-link">DesignPattern(1)</a></li>
 					</ol>
+
 				</div>
 			</div>
-			<div class="ez-fl ez-negmr ez-70">
+			<div class="ez-fl ez-negmr ez-65">
 				<div class="ez-box">
 					<div class="article-list">
 						<div class="title">
@@ -70,6 +79,19 @@
 						<div class="abstract">
 							什么是版本控制？我为什么要关心它呢？版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。Git是一个强大的软件版本管理系统，并力求成为全球最快的分布式代码管理工具。
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ez-fl ez-negmr ez-20">
+				<div class="ez-box">
+					<div id="search-box">
+						<select class="chosen" data-placeholder="文章搜索" style="width:auto;" onchange="self.location.href=options[selectedIndex].value">		
+							    <option ></option>
+								<option value="html/design-pattern.html">设计模式（Design Pattern）</option>
+								<option value="html/clean-code.html">代码整洁（Clean Code）</option>
+								<option value="html/gradle-userguide-zh.html">Gradle使用指南（译）</option>
+								<option value="html/my-git-pro.html">常用Git开发命令和开发模式指南</option>
+						</select>
 					</div>
 				</div>
 			</div>

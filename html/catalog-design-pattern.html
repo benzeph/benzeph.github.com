@@ -7,6 +7,14 @@
 	<link rel="stylesheet" type="text/css" href="../css/zeph.css">
 	<link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../css/harvesthq.chosen/chosen.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+	<script src='../css/harvesthq.chosen/chosen.jquery.js'></script>
+	<script>
+		jQuery(document).ready(function(){
+			jQuery(".chosen").data("placeholder","Select Frameworks...").chosen();
+		});
+	</script>
 </head>
 <body>
 <div class="ez-wr">
@@ -31,7 +39,7 @@
 					</ol>
 				</div>
 			</div>
-			<div class="ez-last ez-oh">
+			<div class="ez-fl ez-negmr ez-65">
 				<div class="ez-box">
 					<div class="article-list">
 						<div class="title">
@@ -40,6 +48,19 @@
 						<div class="abstract">
 							设计模式是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。它并不直接用来完成代码的编写，而是描述在各种不同情况下，要怎么解决问题的一种方案。面向对象设计模式通常以类型或对象来描述其中的关系和相互作用，但不涉及用来完成应用程序的特定类型或对象。设计模式能使不稳定依赖于相对稳定、具体依赖于相对抽象，避免会引起麻烦的紧耦合，以增强软件设计面对并适应变化的能力。 --维基百科
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ez-fl ez-negmr ez-20">
+				<div class="ez-box">
+					<div id="search-box">
+						<select class="chosen" data-placeholder="文章搜索" style="width:auto;" onchange="self.location.href=options[selectedIndex].value">		
+							    <option ></option>
+								<option value="html/design-pattern.html">设计模式（Design Pattern）</option>
+								<option value="html/clean-code.html">代码整洁（Clean Code）</option>
+								<option value="html/gradle-userguide-zh.html">Gradle使用指南（译）</option>
+								<option value="html/my-git-pro.html">常用Git开发命令和开发模式指南</option>
+						</select>
 					</div>
 				</div>
 			</div>

@@ -99,7 +99,9 @@
     text-align: left;
     margin-bottom: 5px;
 }
-
+#search-box{
+    margin-top: 20px;
+}
 #about-me-image{
     margin-top: 10px;
     text-align: left;
