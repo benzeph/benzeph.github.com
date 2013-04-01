@@ -134,7 +134,9 @@
     margin: 5px auto;
     margin-top: 15px;
 }
-
+#leave-me-message{
+    text-align: left;
+}
 #about-me-text{
     text-align: left;
     margin-left: 20px;
