@@ -137,6 +137,10 @@
 #leave-me-message{
     text-align: left;
 }
+#leave-me-message-comments{
+    margin: 5px auto;
+    margin-top: 15px;
+}
 #about-me-text{
     text-align: left;
     margin-left: 20px;
