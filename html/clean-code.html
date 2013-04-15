@@ -6,37 +6,360 @@
 	<link rel="stylesheet" type="text/css" media="screen,projection" href="../css/ez-min.css">
 	<link rel="stylesheet" type="text/css" href="../css/zeph.css">
 	<link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-</head>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'></head>
 <body>
-<div class="ez-wr">
-	<div class="ez-box">
-		<div id="logo">
-			<a href="../index.html" class="darkgrey-link"><img src="../image/logo.gif" /></a>
-		</div>
-	</div>
-	<div class="ez-box">
-		<!-- Module 2A -->
-		<div class="ez-wr">
-			<div class="ez-fl ez-negmr ez-15">
-				<div class="ez-box">
-					<ol>
-						<li class="li-ns"><a href="catalog-git.html" class="grey-link">Git(1)</a></li>
-						<li class="li-ns"><a href="catalog-clean-code.html" class="grey-link">CleanCode(1)</a></li>
-						<li class="li-ns"><a href="catalog-gradle.html" class="grey-link">Gradle(1)</a></li>
-						<li class="li-ns"><a href="catalog-design-pattern.html" class="grey-link">DesignPattern(1)</a></li>
-					</ol>
-				</div>
+	<div class="ez-wr">
+		<div class="ez-box">
+			<div id="logo">
+				<a href="../index.html" class="darkgrey-link">
+					<img src="../image/logo.gif" />
+				</a>
 			</div>
-			<div class="ez-last ez-oh">
-				<div class="ez-box">
-					...
+		</div>
+		<div class="ez-box">
+			<!-- Module 2A -->
+			<div class="ez-wr">
+				<div class="ez-fl ez-negmr ez-15">
+					<div class="ez-box">
+						<ol>
+							<li class="li-ns">
+								<a href="catalog-git.html" class="grey-link">Git(1)</a>
+							</li>
+							<li class="li-ns">
+								<a href="catalog-clean-code.html" class="grey-link">CleanCode(1)</a>
+							</li>
+							<li class="li-ns">
+								<a href="catalog-gradle.html" class="grey-link">Gradle(1)</a>
+							</li>
+							<li class="li-ns">
+								<a href="catalog-design-pattern.html" class="grey-link">DesignPattern(1)</a>
+							</li>
+						</ol>
+					</div>
 				</div>
-				<div class="ez-box">
-					<div id="comments">
-					<!-- Duoshuo Comment BEGIN -->
-					<div class="ds-thread"></div>
-					<script type="text/javascript">
+				<div class="ez-last ez-oh">
+					<div class="ez-box">
+						<div class="article">
+							<blockquote>
+								<h1>代码整洁（Clean Code）</h1>
+								<p> <em>软件质量，不但依赖于架构及项目管理，而且与代码质量紧密相关。这一点，无论是敏捷开发流派还是传统开发流派，都不得不承认。《代码整洁之道》提出一种观念：代码质量与其整洁度成正比。干净的代码，既在质量上较为可靠，也为后期维护、升级奠定了良好基础。作为编程领域的佼佼者，《代码整洁之道》作者给出了一系列行之有效的整洁代码操作实践。这些实践在《代码整洁之道》中体现为一条条规则(或称“启示”)，并辅以来自现实项目的正、反两面的范例。只要遵循这些规则，就能编写出干净的代码，从而有效提升代码质量。		————————《代码整洁之道》</em> 
+								</p>
+								<p> <strong>2 有意义命名</strong>
+								</p>
+
+								<blockquote>
+									<p> <strong>2.2名副其实</strong>
+									</p>
+
+									<p>
+										<strong>2.3避免误导</strong>
+									</p>
+
+									<blockquote>
+										<p>(1) 缩写容易让人误解</p>
+
+										<p>(2) 避免变量名中含有Java类型关键字，除非它确实是这个类型。</p>
+
+										<p>(3) 避免变量名太相似</p>
+									</blockquote>
+
+									<p>
+										<strong>2.4做有意义的区分</strong>
+									</p>
+
+									<blockquote>
+										<p>(1) 不要简单的以添加数字作为两个不同变量的区分</p>
+
+										<p>(2) 不用说废话。例如：NameString，难道Name还会是浮点数。</p>
+									</blockquote>
+
+									<p>
+										<strong>2.5 使用读得出来的名称</strong>
+									</p>
+
+									<blockquote>
+										<p>(1) 少用缩写</p>
+									</blockquote>
+
+									<p>
+										<strong>2.6 使用可搜索的名称</strong>
+									</p>
+
+									<blockquote>
+										<p>(1) 如果变量或常量可能在代码的多处使用，则应该给它一个便于搜索的名称。名称长度应与其作用域大小相对应。</p>
+									</blockquote>
+
+									<p>
+										<strong>2.7 避免使用某种形式的编码</strong>
+										（不要让新人除了应付代码之外，还要搞懂另一种“语言”）
+									</p>
+
+									<blockquote>
+										<p>
+											(1) Java程序不需要类型编码。例如：PhoneNumber和PhoneString，当变量类型改变了，还要改变变量的命名，否则会导致误解。
+										</p>
+
+										<p>(2) 不必用成员前缀。</p>
+
+										<p>(3) 接口和实现的命名。</p>
+									</blockquote>
+
+									<p>
+										<strong>2.8避免思维映射</strong>
+									</p>
+
+									<blockquote>
+										<p>(1)不应当让读者在脑中把你的名称翻译为他们熟知的名称。</p>
+									</blockquote>
+
+									<p>
+										<strong>2.9类名和对象名应该是名词或者名词短语。</strong>
+										避免Manager、Processor这样的类名
+									</p>
+
+									<p>
+										<strong>2.10方法名应当是动词或者动词短语</strong>
+									</p>
+
+									<p>
+										<strong>2.11别扮可爱，名字不要太耍宝</strong>
+									</p>
+
+									<p>
+										<strong>2.12每个概念对应一个词，并保持一致</strong>
+									</p>
+
+									<p>
+										<strong>2.13别用双关语</strong>
+										，避免同一个单词用于不同目的
+									</p>
+
+									<p>
+										<strong>2.14使用解决方案领域名称</strong>
+										（技术性单词）
+									</p>
+
+									<p>
+										<strong>2.15使用源自所涉及问题领域的名称</strong>
+									</p>
+
+									<p>
+										<strong>2.16添加有意义的语境</strong>
+										（给予这个变量一个适当的环境，例如：放置在一个类中，告诉其他人这个变量属于这一个的概念中）
+									</p>
+
+									<p>
+										<strong>2.17不要添加没用的语境</strong>
+									</p>
+								</blockquote>
+								<p>
+									<strong>3 函数</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										<strong>3.1短小</strong>
+									</p>
+
+									<blockquote>
+										<p>(1) if语句、else语句、while语句等，其中的代码块应该只有一行。所以改行大概应该是一个函数的调用过程。</p>
+
+										<p>(2) 函数不应该大到足以容纳嵌套结构。函数的缩进层次不该多于一层或两层。</p>
+									</blockquote>
+
+									<p>
+										<strong>3.2函数只做一件事</strong>
+									</p>
+
+									<p>
+										<strong>3.3每个函数一个抽象层级：函数中的语句都要在同一抽象层级上。</strong>
+									</p>
+
+									<blockquote>
+										<p>(1) 函数中混杂不同层抽象级别，读者可能无法判断某个表达式是基础概念还是细节。</p>
+
+										<p>(2) 自顶向下读代码，每一个函数后面都跟着位于下一个抽象层级的函数。</p>
+
+										<p>3) 程序就像一些列To起头的段落。</p>
+									</blockquote>
+
+									<p>
+										<strong>3.4 switch语句</strong>
+									</p>
+
+									<blockquote>
+										<p>(1) 无法避免的要写</p>
+
+										<p>(2) 确保每一个switch都埋藏在较低的抽象级别，且永不重复。（即switch去做细节的事情）</p>
+									</blockquote>
+
+									<p>
+										<strong>3.5使用描述性的名称</strong>
+									</p>
+
+									<p>
+										<strong>3.6函数参数</strong>
+									</p>
+
+									<blockquote>
+										<p>(1) 最理想的参数是0，其次是1，再其次是2，避免3个参数。</p>
+
+										<p>(2) 不要使用输出参数（信息通过参数来输出）。</p>
+
+										<p>(3) 如果函数看来需要两个、三个或三个以上参数，就说明其中一些承诺书应该封装为类了。</p>
+									</blockquote>
+
+									<p>
+										<strong>3.7无副作用</strong>
+									</p>
+
+									<p>
+										<strong>3.8分隔指令与询问</strong>
+									</p>
+
+									<blockquote>
+										<p>(1) 函数要么做什么事情，要么回答什么事情，不要都做。</p>
+									</blockquote>
+
+									<p>
+										<strong>3.9使用异常代替返回错误码，错误处理代码就能从主路径代码中分离出来。</strong>
+									</p>
+
+									<p>
+										<strong>3.10别重复自己（消除重复）</strong>
+									</p>
+								</blockquote>
+								<p>
+									<strong>4 注释</strong>
+								</p>
+
+								<blockquote>
+									<blockquote>
+										<p>(1) 别个糟糕的代码加注释——重新写吧。</p>
+
+										<p>(2) 能用函数或变量时就别用注释。</p>
+									</blockquote>
+								</blockquote>
+								<p>
+									<strong>5 格式</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										<strong>5.1格式的目的</strong>
+									</p>
+
+									<p>
+										<strong>5.2垂直格式</strong>
+									</p>
+
+									<blockquote>
+										<p>
+											(1) 向报纸学习，名称应该告诉我们是否在正确的模板中，源文件最底部应该给出高层次概念和算法，细节应该往下渐进。最重要的概念先出来，指望以包含最少细节的方式表述它们，指望细节最后出来。
+										</p>
+
+										<p>(2) 概念间垂直方向上的间隔，不同完整的思路用空白行隔开。</p>
+
+										<p>(3) 垂直方向上的靠近，关系紧密的代码应该相互靠近。</p>
+
+										<p>
+											(4) 垂直距离，不要把关系密切的概念放到不同的文件中，对于那些关系密切、放置在同一源文件的概念，它们之间的间隔应该成为相互的易懂度有多重要的衡量标准。变量声明应尽可能靠近其使用位置。函数很短，本地变量应该在函数的顶部出现。实体变量应该在类的顶部声明。相关函数，若某个函数调用了另外一个，就应该把它们放在一起，而且调用者应该尽可能放在被调用者上面。概念相关的代码应该放在一起，相关性越强看，彼此之间的距离就该越短。
+										</p>
+
+										<p>(5)垂直顺序。一般而言，我们想自上而下展示函数调用依赖顺序。也就是说，被调用的函数应该放在执行调用的函数下面。</p>
+									</blockquote>
+
+									<p>
+										<strong>5.3横向格式</strong>
+										（这一部分，除了第一个条件，其他都会受到代码格式化工具的影响）
+									</p>
+
+									<blockquote>
+										<p>(1) 应该尽力保持代码行短小。</p>
+
+										<p>
+											(2) 水平方向上区隔与靠近。使用空格字符将彼此紧密相关的事务连接在一起，也用空格把相关性较弱的事物分隔开。可惜的是，多数代码格式化工具都采用相同的运算符空格，所以这种空格间距用的少。
+										</p>
+
+										<p>(3) 水平对齐。</p>
+
+										<p>(4) 缩进。</p>
+									</blockquote>
+								</blockquote>
+								<p>
+									<strong>6 对象和数据结构</strong>
+								</p>
+
+								<blockquote>
+									<blockquote>
+										<p>
+											将变量设置为私有有一个理由：我们不像其他人依赖这些变量。我们还想在心血来潮时能自由修改其他类型或实现。那么，为什么还有那么多程序员给对象自动添加get和set，将私有变量公之于众、如同它们根本就是公共变量一样呢？
+										</p>
+									</blockquote>
+
+									<p>
+										<strong>6.1 数据抽象</strong>
+									</p>
+
+									<blockquote>
+										<p>
+											(1) 隐藏实现并非只是在变量之间放上一个函数层那么简单。隐藏实现关乎抽象！类并不简单地用set和get将其变量推向外面，而是暴露抽象接口，以便用户无需了解数据的实现就能够操作数据本体。我们不愿暴露数据细节，更愿意以抽象形态表述数据。
+										</p>
+									</blockquote>
+
+									<p>
+										<strong>6.2 数据、对象的反对称性</strong>
+									</p>
+
+									<blockquote>
+										<p>对象把数据隐藏于抽象之后，曝露操作数据的含义。数据结构曝露其数据，没有提供有意义的函数。</p>
+
+										<p>
+											过程式代码（使用数据结构的代码）便于在不改动既有数据结构的前提下添加新函数。面向对象代码便于在不改动既有函数的前提下添加新类。
+										</p>
+
+										<p>过程式代码难以添加新数据结构，因为必须修改所有函数。面向对象代码难以添加新函数，因为必须修改所有类。</p>
+									</blockquote>
+
+									<p>
+										<strong>6.3 得墨忒耳律</strong>
+									</p>
+
+									<blockquote>
+										<p>(1) 模块不应了解它所操作对象的内部情形。对象不应该通过存取器曝露其内部结构。</p>
+
+										<p>(2) 方法不应调用由任何函数返回的对象的方法。</p>
+
+										<p>(3) 火车失事。（由A通过get得到B，由B通过get得到C，最后由C通过get得到想要的）</p>
+
+										<p>
+											(4) 混杂，一半对象，一半数据结构。公共访问器和改值器都把私有变量公开化，诱导外部函数以过程式程序使用数据结构的方式使用这些变量。
+										</p>
+									</blockquote>
+
+									<p>
+										<strong>6.4 数据传送对象</strong>
+									</p>
+
+									<blockquote>
+										<p>
+											最为精炼的数据结构，是一个只有公共变量、没有函数的类。这种数据结构有时被称为数据传送对象（DTO，Data Transfer Objects）。
+										</p>
+
+										<p>
+											对象曝露行为，隐藏数据。便于添加新对象类型而无需修改既有行为，同时也难以在既有对象中添加新行为。数据结构曝露数据，没有明显的行为。便于向既有数据结构添加新行为，同时也难以向既有函数添加新数据结构。
+										</p>
+									</blockquote>
+								</blockquote>
+							</blockquote>
+
+						</div>
+					</div>
+					<div class="ez-box">
+						<div id="comments">
+							<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
 					var duoshuoQuery = {short_name:"benzeph"};
 						(function() {
 							var ds = document.createElement('script');
@@ -47,20 +370,26 @@
 							|| document.getElementsByTagName('body')[0]).appendChild(ds);
 						})();
 					</script>
-					<!-- Duoshuo Comment END -->
+							<!-- Duoshuo Comment END -->
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="ez-box">
-		<div id="contact">
-			<span><a href="https://github.com/benzeph" class="black-orange-link">Github</a></span>
-			<span><a href="about-me.html" class="black-orange-link">关于我</a></span>
-			<span><script src="http://s16.cnzz.com/stat.php?id=5120915&web_id=5120915" language="JavaScript"></script></span>
-			<span>2013</span>
+		<div class="ez-box">
+			<div id="contact">
+				<span>
+					<a href="https://github.com/benzeph" class="black-orange-link">Github</a>
+				</span>
+				<span>
+					<a href="about-me.html" class="black-orange-link">关于我</a>
+				</span>
+				<span>
+					<script src="http://s16.cnzz.com/stat.php?id=5120915&web_id=5120915" language="JavaScript"></script>
+				</span>
+				<span>2013</span>
+			</div>
 		</div>
 	</div>
-</div>
 </body>
 </html>
