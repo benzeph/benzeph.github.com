@@ -74,6 +74,21 @@
     color: #626262;
 }
 
+.purple-link:link{
+    text-decoration: none;
+    color: #87008c;
+}
+
+.purple-link:visited{
+    text-decoration: none;
+    color: #87008c;
+}
+
+.purple-link:hover{
+    text-decoration: none;
+    color: #87008c;
+}
+
 .article-list {
     text-align: left;
     margin-top: 10px;

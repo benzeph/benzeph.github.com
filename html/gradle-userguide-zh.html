@@ -19,43 +19,55 @@
 		SyntaxHighlighter.all();
 	</script>
 </head>
-<script type="text/javascript">
+	<script type="text/javascript">
 		$(function () {
 			$.scrollUp();
 		});
 </script>
 <body>
-<div class="ez-wr">
-	<div class="ez-box">
-		<div id="logo">
-			<a href="../index.html" class="darkgrey-link"><img src="../image/logo.gif" /></a>
-		</div>
-	</div>
-	<div class="ez-box">
-		<!-- Module 2A -->
-		<div class="ez-wr">
-			<div class="ez-fl ez-negmr ez-15">
-				<div class="ez-box">
-					<ol>
-						<li class="li-ns"><a href="catalog-git.html" class="grey-link">Git(1)</a></li>
-						<li class="li-ns"><a href="catalog-clean-code.html" class="grey-link">CleanCode(1)</a></li>
-						<li class="li-ns"><a href="catalog-gradle.html" class="grey-link">Gradle(1)</a></li>
-						<li class="li-ns"><a href="catalog-design-pattern.html" class="grey-link">DesignPattern(1)</a></li>
-					</ol>
-				</div>
+	<div class="ez-wr">
+		<div class="ez-box">
+			<div id="logo">
+				<a href="../index.html" class="darkgrey-link">
+					<img src="../image/logo.gif" />
+				</a>
 			</div>
-			<div class="ez-last ez-oh">
-				<div class="ez-box">
-					<div class="ez-wr">
-						<div class="ez-fl ez-negmr ez-66">
-							<div class="ez-box">
-								<div class="article">
-									<blockquote>
+		</div>
+		<div class="ez-box">
+			<!-- Module 2A -->
+			<div class="ez-wr">
+				<div class="ez-fl ez-negmr ez-15">
+					<div class="ez-box">
+						<ol>
+							<li class="li-ns">
+								<a href="catalog-git.html" class="grey-link">Git(1)</a>
+							</li>
+							<li class="li-ns">
+								<a href="catalog-clean-code.html" class="grey-link">CleanCode(1)</a>
+							</li>
+							<li class="li-ns">
+								<a href="catalog-gradle.html" class="grey-link">Gradle(1)</a>
+							</li>
+							<li class="li-ns">
+								<a href="catalog-design-pattern.html" class="grey-link">DesignPattern(1)</a>
+							</li>
+						</ol>
+					</div>
+				</div>
+				<div class="ez-last ez-oh">
+					<div class="ez-box">
+						<div class="ez-wr">
+							<div class="ez-fl ez-negmr ez-66">
+								<div class="ez-box">
+									<div class="article">
+										<blockquote>
 											<h1>Gradle使用指南（译）</h1>
 
-											<p><em>本文中的内容来自Gradle User Guide，由于本人英文水平有限，所以部分翻译内容可能不准确。</em></p>
+											<p> <em>本文中的内容来自Gradle User Guide，由于本人英文水平有限，所以部分翻译内容可能不准确。</em>
+											</p>
 
-											<p><strong>Gradle提供</strong></p>
+											<p> <strong>Gradle提供</strong>
+											</p>
 
 											<p>1.一个像ant一样，通用的灵活的构建工具。</p>
 
@@ -75,7 +87,8 @@
 
 											<p>9.具有广泛的领域模型支持你的构建。</p>
 
-											<p><strong>前提条件：</strong></p>
+											<p> <strong>前提条件：</strong>
+											</p>
 
 											<p>1.官方网站下载Gradle：http://www.gradle.org/downloads</p>
 
@@ -84,192 +97,212 @@
 											<p>3.添加GRADLE_HOME/bin到环境变量</p>
 
 											<p>4.在命令行中输入：gradle –v，测试是否安装成功</p>
-									</blockquote>
+										</blockquote>
+									</div>
+								</div>
+							</div>
+							<div class="ez-last ez-oh">
+								<div class="ez-box">
+									<ul>
+										<li class="li-ns">
+											<a href="#Build Script Basics" class="purple-link">1.Build Script Basics（构建脚本基础）</a>
+										</li>
+										<li class="li-ns">
+											<a href="#Java Quickstart" class="purple-link">2.Java Quickstart（使用Java）</a>
+										</li>
+										<li class="li-ns">
+											<a href="#What is Dependency Management" class="purple-link">3.What is Dependency Management（什么是依赖管理）</a>
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
-						<div class="ez-last ez-oh">
-							<div class="ez-box">
-								<ul>
-									<li class="li-ns"><a href="#Build Script Basics" class="purple-link">1.Build Script Basics（构建脚本基础）</a></li>
-									<li class="li-ns"><a href="#Java Quickstart" class="purple-link">2.Java Quickstart（使用Java）</a></li>
-								</ul>
-							</div>
-						</div>
 					</div>
-				</div>
-				<div class="ez-box">
-					<div class="article">
-						
-						<blockquote>
-							<p id="Build Script Basics"><strong>6 Build Script Basics（构建脚本基础）</strong></p>
-
-							<p><strong>6.1 Projects和Task</strong></p>
+					<div class="ez-box">
+						<div class="article">
 							<blockquote>
-								<p>在Gradle中有两个概念：projects 和 tasks。<br/></p>
-
-								<p>
-									每一个Gradle都是由一个或者多个project组成。而一个project代表着你的软件中能够被构建的一些组件。一个Project具体是什么意思，取决于你构建的内容。例如，一个project可以是一个jar文件或者一个web应用，也可以是一个由其他project产生的多个jar文件的分发zip包。一个project不一定要代表这一个要被构建的东西。也可能是一件要做的事情，例如部署你的应用或者产品环境。如果你觉得这里有点模糊，不用担心。Gradle基于约定的构建支持给一个project添加了一个更具体的定义。<br/>
+								<p id="Build Script Basics">
+									<strong>6 Build Script Basics（构建脚本基础）</strong>
 								</p>
 
 								<p>
-									每一个project是有一个或多个task组成。一个task代表着一个构建平台的一些原子性工作。它可能是编译一些类，创建一个jar包，生成javadoc，或者发布某些构件内容到仓库。</p>
+									<strong>6.1 Projects和Task</strong>
+								</p>
+								<blockquote>
+									<p>
+										在Gradle中有两个概念：projects 和 tasks。
+										<br/>
+									</p>
+
+									<p>
+										每一个Gradle都是由一个或者多个project组成。而一个project代表着你的软件中能够被构建的一些组件。一个Project具体是什么意思，取决于你构建的内容。例如，一个project可以是一个jar文件或者一个web应用，也可以是一个由其他project产生的多个jar文件的分发zip包。一个project不一定要代表这一个要被构建的东西。也可能是一件要做的事情，例如部署你的应用或者产品环境。如果你觉得这里有点模糊，不用担心。Gradle基于约定的构建支持给一个project添加了一个更具体的定义。
+										<br/>
+									</p>
+
+									<p>
+										每一个project是有一个或多个task组成。一个task代表着一个构建平台的一些原子性工作。它可能是编译一些类，创建一个jar包，生成javadoc，或者发布某些构件内容到仓库。
+									</p>
+								</blockquote>
 							</blockquote>
-						</blockquote>
-						<blockquote>
-							<p><strong>6.2 Helloworld</strong></p>
 							<blockquote>
 								<p>
-									通过命令“gradle”运行一个Gradle构建。这个命令会去当前文件夹寻找一个叫做build.gradle的文件。创建一个叫做build.gradle的文件，它是一个构建配置脚本，在里面输入以下内容：</p>
-							</blockquote>
+									<strong>6.2 Helloworld</strong>
+								</p>
+								<blockquote>
+									<p>
+										通过命令“gradle”运行一个Gradle构建。这个命令会去当前文件夹寻找一个叫做build.gradle的文件。创建一个叫做build.gradle的文件，它是一个构建配置脚本，在里面输入以下内容：
+									</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 								task hello {
 									doLast {
 										println 'Hello world!'
 									}
-								}
-								</pre>
-						</blockquote>
-						<blockquote>
-							<blockquote>
-								<p>在命令行中，进入到脚本文件的目录，输入：gradle -q hello</p>
-
-								<p>输出结果是：Hello world。</p>
-
-								<p>
-									这个构建脚本定义了一个单独的名为hello的task，并给它添加了执行的动作。这个动作是一个括号，里面包含了待执行的Groovy代码。如果你觉得它有点像ant的target，好吧，你对了。Gradle的task等同于Ant的target，但是正如你所看到的，比ant更强大。</p>
+								}		</pre>
 							</blockquote>
-						</blockquote>
-						<blockquote>
-							<p><strong>6.3 定义task的快捷方式</strong></p>
+							<blockquote>
+								<blockquote>
+									<p>在命令行中，进入到脚本文件的目录，输入：gradle -q hello</p>
+
+									<p>输出结果是：Hello world。</p>
+
+									<p>
+										这个构建脚本定义了一个单独的名为hello的task，并给它添加了执行的动作。这个动作是一个括号，里面包含了待执行的Groovy代码。如果你觉得它有点像ant的target，好吧，你对了。Gradle的task等同于Ant的target，但是正如你所看到的，比ant更强大。
+									</p>
+								</blockquote>
+							</blockquote>
+							<blockquote>
+								<p>
+									<strong>6.3 定义task的快捷方式</strong>
+								</p>
 								<pre class="brush: groovy;">
 								task hello << {
 									println 'Hello world!'
-								}
-								</pre>
-							<blockquote>
-								<p>一样，这里定义了一个叫做hello的task。只有一个括号。这也是一种常用的写法。</p>
+								}		</pre>
+								<blockquote>
+									<p>一样，这里定义了一个叫做hello的task。只有一个括号。这也是一种常用的写法。</p>
+								</blockquote>
 							</blockquote>
-						</blockquote>
-						<blockquote>
-							<p><strong>6.4 Build scripts are code（脚本就是代码）</strong></p>
 							<blockquote>
-								<p>Gradle脚本向你展示了Groovy的强大，就像开胃菜一样。看看下面这个：</p>
-							</blockquote>
-									<pre class="brush: groovy;">
+								<p>
+									<strong>6.4 Build scripts are code（脚本就是代码）</strong>
+								</p>
+								<blockquote>
+									<p>Gradle脚本向你展示了Groovy的强大，就像开胃菜一样。看看下面这个：</p>
+								</blockquote>
+								<pre class="brush: groovy;">
 										task upper << {
 											String someString = 'mY_nAmE'
 											println "Original: " + someString
 											println "Upper case: " + someString.toUpperCase()
-										}
-									</pre>
-							<blockquote>
-								<p>输入命令“gradle -q upper”，输出结果：</p>
+										}		</pre>
+								<blockquote>
+									<p>输入命令“gradle -q upper”，输出结果：</p>
 
-								<p>Original: mY_nAmE </p>
+									<p>Original: mY_nAmE</p>
 
-								<p>Upper case: MY_NAME</p>
+									<p>Upper case: MY_NAME</p>
 
-								<p>又如：</p>
-							</blockquote>
-									<pre class="brush: groovy;">
+									<p>又如：</p>
+								</blockquote>
+								<pre class="brush: groovy;">
 										task count << {
 											4.times { print "$it " }
-										}
-									</pre>
-							<blockquote>
-								<p>输出：0 1 2 3</p>
+										}					</pre>
+								<blockquote>
+									<p>输出：0 1 2 3</p>
+								</blockquote>
 							</blockquote>
-						</blockquote>
-						<blockquote>
-							<p><strong>6.5 Task dependencies（Task的依赖）</strong></p>
+							<blockquote>
+								<p>
+									<strong>6.5 Task dependencies（Task的依赖）</strong>
+								</p>
 
-							<blockquote>
-								<p>你可能会猜到，可以在task间声明依赖。例如：</p>
-							</blockquote>
+								<blockquote>
+									<p>你可能会猜到，可以在task间声明依赖。例如：</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 										task hello << {
 											println 'Hello world!'
 										}
 										task intro(dependsOn: hello) << {
 											println "I'm Gradle"
-										}
-									</pre>
-							<blockquote>
-								<p>输出：</p>
+										}		</pre>
+								<blockquote>
+									<p>输出：</p>
 
-								<p>Hello world!</p>
+									<p>Hello world!</p>
 
-								<p>I'm Gradle</p>
+									<p>I'm Gradle</p>
 
-								<p>添加一个依赖，相关的task不一定要在它之前存在。例如：</p>
-							</blockquote>
+									<p>添加一个依赖，相关的task不一定要在它之前存在。例如：</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 										task taskX(dependsOn: 'taskY') << {
 											println 'taskX'
 										}
 										task taskY << {
 											println 'taskY'
-										}
-								</pre>
-							<blockquote>
-								<p>输出：</p>
+										}		</pre>
+								<blockquote>
+									<p>输出：</p>
 
-								<p>taskY</p>
+									<p>taskY</p>
 
-								<p>taskX</p>
+									<p>taskX</p>
 
-								<p>taskX对taskY的依赖在taskY声明之前就定义了。这一点对于多project构建很重要。</p>
+									<p>taskX对taskY的依赖在taskY声明之前就定义了。这一点对于多project构建很重要。</p>
+								</blockquote>
 							</blockquote>
-						</blockquote>
-						<blockquote>
-							<p> <strong>6.6 Dynamic tasks（动态的task）</strong></p>
-
 							<blockquote>
-								<p>Groovy不仅可以定义一个task做什么事情。例如，你可以用它来动态的创建一个新的task。</p>
-							</blockquote>
+								<p>
+									<strong>6.6 Dynamic tasks（动态的task）</strong>
+								</p>
+
+								<blockquote>
+									<p>Groovy不仅可以定义一个task做什么事情。例如，你可以用它来动态的创建一个新的task。</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 									4.times { counter ->
 										task "task$counter" << {
 											println "I'm task number $counter"
 										}
-									}
-								</pre>
-							<blockquote>
-								<p>使用命令“gradle -q task1”</p>
+									}		</pre>
+								<blockquote>
+									<p>使用命令“gradle -q task1”</p>
 
-								<p>输出：</p>
+									<p>输出：</p>
 
-								<p>I'm task number 1</p>
+									<p>I'm task number 1</p>
 
-								<p>使用命令“gradle -q task2”</p>
+									<p>使用命令“gradle -q task2”</p>
 
-								<p>输出：</p>
+									<p>输出：</p>
 
-								<p>I'm task number 2</p>
+									<p>I'm task number 2</p>
+								</blockquote>
 							</blockquote>
-						</blockquote>
-					</div>
-					<div class="article">
-						<blockquote>
-							<p><strong>6.7. Manipulating existing tasks（操作存在的task）</strong></p>
+						</div>
+						<div class="article">
 							<blockquote>
-								<p>一旦task被创建，可以通过api访问。这一点和ant不同。例如，你可以创建一个额外的依赖：</p>
-							</blockquote>
-								<pre class="brush: groovy;">
-									task0.dependsOn task2, task3
-								</pre>
-							<blockquote>
-								<p>输出：</p>
+								<p>
+									<strong>6.7. Manipulating existing tasks（操作存在的task）</strong>
+								</p>
+								<blockquote>
+									<p>一旦task被创建，可以通过api访问。这一点和ant不同。例如，你可以创建一个额外的依赖：</p>
+								</blockquote>
+								<pre class="brush: groovy;">task0.dependsOn task2, task3</pre>
+								<blockquote>
+									<p>输出：</p>
 
-								<p>I'm task number 2</p>
+									<p>I'm task number 2</p>
 
-								<p>I'm task number 3</p>
+									<p>I'm task number 3</p>
 
-								<p>I'm task number 0</p>
+									<p>I'm task number 0</p>
 
-								<p>或者你可以添加一个行为给一个存在的task。</p>
-							</blockquote>
+									<p>或者你可以添加一个行为给一个存在的task。</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 									task hello << {
 										println 'Hello Earth'
@@ -282,79 +315,89 @@
 									}
 									hello << {
 										println 'Hello Jupiter'
-									}
-								</pre>
-							<blockquote>
-								<p>输入命令“gradle -q hello”</p>
+									}		</pre>
+								<blockquote>
+									<p>输入命令“gradle -q hello”</p>
 
-								<p>输出：</p>
+									<p>输出：</p>
 
-								<p>Hello Venus</p>
+									<p>Hello Venus</p>
 
-								<p>Hello Earth</p>
+									<p>Hello Earth</p>
 
-								<p>Hello Mars</p>
+									<p>Hello Mars</p>
 
-								<p>Hello Jupiter</p>
+									<p>Hello Jupiter</p>
 
-								<p>
-									doFirst和doLast能够被执行多次。在task的action列表的开始和最后都添加了一个action。当task执行，action列表中的action会被顺序执行。操作符&lt;&lt;是doLast的别名。</p>
+									<p>
+										doFirst和doLast能够被执行多次。在task的action列表的开始和最后都添加了一个action。当task执行，action列表中的action会被顺序执行。操作符&lt;&lt;是doLast的别名。
+									</p>
+								</blockquote>
 							</blockquote>
-						</blockquote>
-						<blockquote>
-						  <p><strong>6.8 Shortcut notations（快捷标记）</strong></p>
-						  
-						  <blockquote>
-						    <p>就像你之前看到例子一样，有一个便捷的标记可以访问一个存在的task。每一个task都可以用，就像build脚本的一个属性。</p>
-						    </blockquote>
+							<blockquote>
+								<p>
+									<strong>6.8 Shortcut notations（快捷标记）</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										就像你之前看到例子一样，有一个便捷的标记可以访问一个存在的task。每一个task都可以用，就像build脚本的一个属性。
+									</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 									task hello << {
 										println 'Hello world!'
 									}
 									hello.doLast {
 										println "Greetings from the $hello.name task."
-									}
-								</pre>
+									}	</pre>
+								<blockquote>
+									<p>输出:</p>
+
+									<p>Hello world!</p>
+
+									<p>Greetings from the hello task.</p>
+
+									<p>这样可以使代码非常美观，特别是当你使用由plugin提供的task时。</p>
+								</blockquote>
+							</blockquote>
 							<blockquote>
-						    <p>输出:</p>
-						    
-						    <p>Hello world!</p>
-						    
-						    <p>Greetings from the hello task.</p>
-						    
-						    <p>这样可以使代码非常美观，特别是当你使用由plugin提供的task时。</p>
-						  </blockquote>
-						</blockquote>
-						<blockquote>
-						  <p><strong>6.9 Extra task properties（其他task属性）</strong></p>
-						  
-						  <blockquote>
-						    <p>你可以给一个task添加你自己属性。例如，添加一个属性myProperty,，给ext.myProperty设置一个初始值。从这时开始，这个属性可以被get和set就像预定义task属性。</p>
-						    </blockquote>
+								<p>
+									<strong>6.9 Extra task properties（其他task属性）</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										你可以给一个task添加你自己属性。例如，添加一个属性myProperty,，给ext.myProperty设置一个初始值。从这时开始，这个属性可以被get和set就像预定义task属性。
+									</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 									task myTask {
 										ext.myProperty = "myValue"
 									}
 									task printTaskProperties << {
 										println myTask.myProperty
-									}
-								</pre>
-							<blockquote>
-						    <p>输出：</p>
-						    
-						    <p>myValue</p>
-						  </blockquote>
-						</blockquote>
-						<blockquote>
-							<p><strong>6.10 Using Ant Tasks</strong></p>
-							  
-							<p><strong>6.12 Default tasks</strong></p>
-							  
-							<blockquote>
-								 <p>Gradle允许你去给你的构建定义一个或者多个默认的task。</p>
-							    
-							     <p>输入命令“gradle -q”</p>
+									}	</pre>
+								<blockquote>
+									<p>输出：</p>
+
+									<p>myValue</p>
+								</blockquote>
 							</blockquote>
+							<blockquote>
+								<p>
+									<strong>6.10 Using Ant Tasks</strong>
+								</p>
+
+								<p>
+									<strong>6.12 Default tasks</strong>
+								</p>
+
+								<blockquote>
+									<p>Gradle允许你去给你的构建定义一个或者多个默认的task。</p>
+
+									<p>输入命令“gradle -q”</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 									defaultTasks 'clean', 'run'
 									task clean << {
@@ -365,120 +408,150 @@
 									}
 									task other << {
 										println "I'm not a default task!"
-									}
-								</pre>
-							<blockquote>    
-							     <p>输出是</p>
-							    
-							     <p>Default Cleaning!</p>
-							    
-							     <p>Default Running!</p>
-							    
-							     <p>这个等同于gradle clean run的命令。在多project构建中，每个子project都能够有他们自己指定的默认task。如果一个子project没有指定默认的task，就会用它父project的默认task。</p>
+									}			</pre>
+								<blockquote>
+									<p>输出是</p>
+
+									<p>Default Cleaning!</p>
+
+									<p>Default Running!</p>
+
+									<p>
+										这个等同于gradle clean run的命令。在多project构建中，每个子project都能够有他们自己指定的默认task。如果一个子project没有指定默认的task，就会用它父project的默认task。
+									</p>
+								</blockquote>
+
+								<p>
+									<strong>6.13 Configure by DAG</strong>
+								</p>
 							</blockquote>
-							  
-							<p><strong>6.13 Configure by DAG</strong></p>
-						</blockquote>
-						<blockquote>
-							<p id="Java Quickstart"><strong>7 Java Quickstart（使用Java）</strong></p>
-						    <p><strong>7.1 The Java plugin(Java插件)</strong></p>
-						  
-						    <blockquote>
-							    <p>正如我们所看到的，Gradle是一个通用构建工具。他可以构建很多想要在构建脚本中实现的东西。但是你必须要将相关代码添加到你的脚本中。</p>
-							    
-							    <p>大部分java项目只需走基本流程：编译你的java源代码，运行一些测试用例，创建一个包含有你class的jar文件。如果你不需要为每一个项目配置这样的代码，那该有多好。幸运的是，你确实不需要这么做，Gradle通过使用plugin的方式解决这个问题。一个plugin是Gradle的扩展，它以某种方式配置你的项目，通常是添加一些预配置task，这些task集中在一起做一些有用的事情。Gradle装载了一些plugin，你也可以简单的写你自己的plugin，并和其他人分享。其中一种plugin就是Java Plugin。这个plugin添加了一些task到你的项目，它会编译和测试你的java代码，并打包成jar文件。</p>
-							    
-							    <p>Java Plugin是基于约定的。这意味着这个plugin为你的项目的许多方面都定义了默认值，例如Java源代码的位置。如果你依循这些约定，你通常不需要做太多的事情就可以得到一个非常好用的构建。Gradle也允许你定制项目，如果你不想或不能依循这些约定。</p>
-						    </blockquote>
-						</blockquote>
-						<blockquote>
-							<p><strong>7.2 A basic Java project(一个基本的Java的项目)</strong></p>
-							  
 							<blockquote>
-							    <p>看例子，如果你要是使用java，需要添加以下的代码：</p>
+								<p id="Java Quickstart">
+									<strong>7 Java Quickstart（使用Java）</strong>
+								</p>
+								<p>
+									<strong>7.1 The Java plugin(Java插件)</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										正如我们所看到的，Gradle是一个通用构建工具。他可以构建很多想要在构建脚本中实现的东西。但是你必须要将相关代码添加到你的脚本中。
+									</p>
+
+									<p>
+										大部分java项目只需走基本流程：编译你的java源代码，运行一些测试用例，创建一个包含有你class的jar文件。如果你不需要为每一个项目配置这样的代码，那该有多好。幸运的是，你确实不需要这么做，Gradle通过使用plugin的方式解决这个问题。一个plugin是Gradle的扩展，它以某种方式配置你的项目，通常是添加一些预配置task，这些task集中在一起做一些有用的事情。Gradle装载了一些plugin，你也可以简单的写你自己的plugin，并和其他人分享。其中一种plugin就是Java Plugin。这个plugin添加了一些task到你的项目，它会编译和测试你的java代码，并打包成jar文件。
+									</p>
+
+									<p>
+										Java Plugin是基于约定的。这意味着这个plugin为你的项目的许多方面都定义了默认值，例如Java源代码的位置。如果你依循这些约定，你通常不需要做太多的事情就可以得到一个非常好用的构建。Gradle也允许你定制项目，如果你不想或不能依循这些约定。
+									</p>
+								</blockquote>
 							</blockquote>
-								<pre class="brush: groovy;">
-									apply plugin: 'java'
-								</pre>
-							<blockquote>    
-							    <p>这就是要定义一个java项目，你所要做的事情。它会将Java的plugin添加到你的项目，即给你的项目添加一些task。</p>
-							    
-							    <p>Gradle希望可以在src/main/java目录下找到你的源代码在src/test/java下找到你的测试用例。另外，任何存放在src/main/resources下的文件都会打包到jar中。任何存放在src/test/resources中的文件都会用来运行测试。所有的输出文件都在build目录下，而jar文件就存放在build/libs目录。</p>
-							</blockquote>
-						</blockquote>
-						<blockquote>
-						  <p><strong>7.2.1 Building the project（构建项目）</strong></p>
-						  	<blockquote>
-							    <p>Java的plugin会添加一些task到你的项目中。然而，只有少量的一些task你会用到去构建你的项目。最常用到的task是build task，它会完成对整个项目的build任务。当你运行gradle build，gradle会编译和测试你的代码，并创建一个包含main和resource的jar文件。</p>
-							    
-							    <p>输入命令“gradle build”</p>
-							    
-							    <p>输出：</p>
-							    
-							    <p>:compileJava</p>
-							    
-							    <p>:processResources</p>
-							    
-							    <p>:classes</p>
-							    
-							    <p>:jar</p>
-							    
-							    <p>:assemble</p>
-							    
-							    <p>:compileTestJava</p>
-							    
-							    <p>:processTestResources</p>
-							    
-							    <p>:testClasses</p>
-							    
-							    <p>:test</p>
-							    
-							    <p>:check</p>
-							    
-							    <p>:build</p>
-							    
-							    <p>BUILD SUCCESSFUL</p>
-							    
-							    <p>Total time: 1 secs</p>
-							    
-							    <p>其他比较有用的task还有：</p>
-							    
-							    <p>clean：删除build目录，移除所有文件。</p>
-							    
-							    <p>assemble：编译和打包你的代码，但是不运行测试。其他插件可能会添加更多的构建到这个task中。例如，如果你要使用War的plugin，这个task会为你的项目构建War文件。</p>
-							    
-							    <p>check：编译和测试你的代码。其他插件可能会添加更多检测到这个task。例如，如果你使用Code-quality的plugin，这个任务还会运行代码风格检查。</p>
-						  	</blockquote>
-						</blockquote>
-						<blockquote>
-							<p><strong>7.2.2 External dependencies（外部依赖）</strong></p>
-							  
 							<blockquote>
-							    <p>通常，一个java项目还会需要对额外jar包需求的依赖。要将jar文件引入到你的项目，你必须告诉gradle在哪里可以找到它。在Gradle中，像jar包这种构建，都是放在仓库中。仓库可以用来获取一个项目的依赖的位置，或者发布一个项目的构建的位置。例如，使用公共的Maven仓库。</p>
+								<p>
+									<strong>7.2 A basic Java project(一个基本的Java的项目)</strong>
+								</p>
+
+								<blockquote>
+									<p>看例子，如果你要是使用java，需要添加以下的代码：</p>
+								</blockquote>
+								<pre class="brush: groovy;">apply plugin: 'java'</pre>
+								<blockquote>
+									<p>这就是要定义一个java项目，你所要做的事情。它会将Java的plugin添加到你的项目，即给你的项目添加一些task。</p>
+
+									<p>
+										Gradle希望可以在src/main/java目录下找到你的源代码在src/test/java下找到你的测试用例。另外，任何存放在src/main/resources下的文件都会打包到jar中。任何存放在src/test/resources中的文件都会用来运行测试。所有的输出文件都在build目录下，而jar文件就存放在build/libs目录。
+									</p>
+								</blockquote>
 							</blockquote>
+							<blockquote>
+								<p>
+									<strong>7.2.1 Building the project（构建项目）</strong>
+								</p>
+								<blockquote>
+									<p>
+										Java的plugin会添加一些task到你的项目中。然而，只有少量的一些task你会用到去构建你的项目。最常用到的task是build task，它会完成对整个项目的build任务。当你运行gradle build，gradle会编译和测试你的代码，并创建一个包含main和resource的jar文件。
+									</p>
+
+									<p>输入命令“gradle build”</p>
+
+									<p>输出：</p>
+
+									<p>:compileJava</p>
+
+									<p>:processResources</p>
+
+									<p>:classes</p>
+
+									<p>:jar</p>
+
+									<p>:assemble</p>
+
+									<p>:compileTestJava</p>
+
+									<p>:processTestResources</p>
+
+									<p>:testClasses</p>
+
+									<p>:test</p>
+
+									<p>:check</p>
+
+									<p>:build</p>
+
+									<p>BUILD SUCCESSFUL</p>
+
+									<p>Total time: 1 secs</p>
+
+									<p>其他比较有用的task还有：</p>
+
+									<p>clean：删除build目录，移除所有文件。</p>
+
+									<p>
+										assemble：编译和打包你的代码，但是不运行测试。其他插件可能会添加更多的构建到这个task中。例如，如果你要使用War的plugin，这个task会为你的项目构建War文件。
+									</p>
+
+									<p>
+										check：编译和测试你的代码。其他插件可能会添加更多检测到这个task。例如，如果你使用Code-quality的plugin，这个任务还会运行代码风格检查。
+									</p>
+								</blockquote>
+							</blockquote>
+							<blockquote>
+								<p>
+									<strong>7.2.2 External dependencies（外部依赖）</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										通常，一个java项目还会需要对额外jar包需求的依赖。要将jar文件引入到你的项目，你必须告诉gradle在哪里可以找到它。在Gradle中，像jar包这种构建，都是放在仓库中。仓库可以用来获取一个项目的依赖的位置，或者发布一个项目的构建的位置。例如，使用公共的Maven仓库。
+									</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 									repositories {
 										mavenCentral()
-									}
-								</pre>
-							<blockquote>    
-							    <p>让我们来添加一些依赖。这里，我们声明一个我们的产品类需要一个编译期的依赖commons collections，测试类也需要一个编译期的类junit。</p>
-							</blockquote>
+									}			</pre>
+								<blockquote>
+									<p>
+										让我们来添加一些依赖。这里，我们声明一个我们的产品类需要一个编译期的依赖commons collections，测试类也需要一个编译期的类junit。
+									</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 									dependencies {
 										compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
 										testCompile group: 'junit', name: 'junit', version: '4.+'
-									}
-								</pre>
-							<blockquote>    
+									}				</pre>
+								<blockquote></blockquote>
 							</blockquote>
-						</blockquote>
-						<blockquote>
-							<p><strong>7.2.3 Customising the project（定制项目）</strong></p>
-							  
 							<blockquote>
-							    <p>Java的plugin会添加很多属性到你的项目中。这些属性都有默认的值，通常是够用的。如果你觉得不合适，你可以很方便的修改它们。举个例子，这里，我们为我们的java项目指定一个版本号，对jar清单添加一些属性。</p>
-							</blockquote>
+								<p>
+									<strong>7.2.3 Customising the project（定制项目）</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										Java的plugin会添加很多属性到你的项目中。这些属性都有默认的值，通常是够用的。如果你觉得不合适，你可以很方便的修改它们。举个例子，这里，我们为我们的java项目指定一个版本号，对jar清单添加一些属性。
+									</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 									sourceCompatibility = 1.5
 									version = '1.0'
@@ -486,23 +559,27 @@
 										manifest {
 											attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
 										}
-									}
-								</pre>
-							<blockquote>    
-							    <p>Java的plugin添加的task都是一些常规task，跟将它们直接定义在build文件中一样。这意味着你可以使用之前章节学到的机制去定制task。例如你可以设置一个task的属性，给一个task添加行为，修改一个task的依赖，或者完全替代一个task。在我们的例子中，我们会配置一个test task，它是Test类型，以便在测试时，添加一些系统属性。</p>
-							</blockquote>
-							<pre class="brush: groovy;">
+									}		</pre>
+								<blockquote>
+									<p>
+										Java的plugin添加的task都是一些常规task，跟将它们直接定义在build文件中一样。这意味着你可以使用之前章节学到的机制去定制task。例如你可以设置一个task的属性，给一个task添加行为，修改一个task的依赖，或者完全替代一个task。在我们的例子中，我们会配置一个test task，它是Test类型，以便在测试时，添加一些系统属性。
+									</p>
+								</blockquote>
+								<pre class="brush: groovy;">
 								test {
 									systemProperties 'property': 'value'
-								}
-							</pre>
-						</blockquote>
-						<blockquote>
-							<p><strong>7.2.4 Publishing the JAR file（发布Jar）</strong></p>
-							  
-							<blockquote>
-							    <p>通常Jar包都是要发布到某一个位置。要完成这件事，你需要告诉Gradle在哪里发布。在Gradle中，像jar文件这样的构建都是发布到仓库中。在我们的例子中，我们将会发布到一个本地的仓库。你也可以发布到远程仓库或者多个仓库中：</p>
+								}	</pre>
 							</blockquote>
+							<blockquote>
+								<p>
+									<strong>7.2.4 Publishing the JAR file（发布Jar）</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										通常Jar包都是要发布到某一个位置。要完成这件事，你需要告诉Gradle在哪里发布。在Gradle中，像jar文件这样的构建都是发布到仓库中。在我们的例子中，我们将会发布到一个本地的仓库。你也可以发布到远程仓库或者多个仓库中：
+									</p>
+								</blockquote>
 								<pre class="brush: groovy;">
 									uploadArchives {
 										repositories {
@@ -510,59 +587,69 @@
 												dirs 'repos'
 											}
 										}
-									}
-								</pre>
-							<blockquote>        
-							    <p>运行命令“gradle uploadArchives.”</p>
+									}		</pre>
+								<blockquote>
+									<p>运行命令“gradle uploadArchives.”</p>
+								</blockquote>
 							</blockquote>
-						</blockquote>
-						<blockquote>
-							<p><strong>7.2.5 Creating an Eclipse project（创建一个Eclipse项目）</strong></p>
-							  
 							<blockquote>
-							    <p>要想导入项目到Eclipse，你需要添加另一个plugin到build文件：build.gradle</p>
+								<p>
+									<strong>7.2.5 Creating an Eclipse project（创建一个Eclipse项目）</strong>
+								</p>
+
+								<blockquote>
+									<p>要想导入项目到Eclipse，你需要添加另一个plugin到build文件：build.gradle</p>
+								</blockquote>
+								<pre class="brush: groovy;">apply plugin: 'eclipse'</pre>
+								<blockquote>
+									<p>执行“gradle eclipse”命令</p>
+								</blockquote>
 							</blockquote>
+							<blockquote>
+								<p>
+									<strong>7.3 Multi-project Java build（多项目构建）</strong>
+								</p>
+
+								<blockquote>
+									<p>现在，让我们来看看一个典型的多project构建。下面是项目的层次。</p>
+
+									<p>multiproject/</p>
+
+									<p>api/</p>
+
+									<p>services/webservice/</p>
+
+									<p>shared/</p>
+
+									<p>
+										这里有三个project。Project api产生一个jar文件，它会传递给客户端为你的XML的webservice提供一个Java客户端。Project webservice是一个返回XML的webapp。Project shared包含api和webservice使用的代码。
+									</p>
+								</blockquote>
+							</blockquote>
+							<blockquote>
+								<p>
+									<strong>7.3.1 Defining a multi-project build（定义一个多项目构建）</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										要定义一个多project，你需要创建一个settings file。这个“设置文件”放在源代码树的根目录下，并指定哪些项目需要构建。这个文件必须叫做“settings.gradle”。例如，我们使用一个简单的继承结构。相关文件如下:
+									</p>
+								</blockquote>
 								<pre class="brush: groovy;">
-									apply plugin: 'eclipse'
-								</pre>
-							<blockquote>           
-							    <p>执行“gradle eclipse”命令</p>
+								include "shared", "api", "services:webservice", "services:shared"</pre>
 							</blockquote>
-						</blockquote>	
-						<blockquote>
-							<p><strong>7.3 Multi-project Java build（多项目构建）</strong></p>
-							  
 							<blockquote>
-							    <p>现在，让我们来看看一个典型的多project构建。下面是项目的层次。</p>
-							    
-							    <p>multiproject/</p>
-							    
-							    <p>api/</p>
-							    
-							    <p>services/webservice/</p>
-							    
-							    <p>shared/</p>
-							    
-							    <p>这里有三个project。Project api产生一个jar文件，它会传递给客户端为你的XML的webservice提供一个Java客户端。Project webservice是一个返回XML的webapp。Project shared包含api和webservice使用的代码。</p>
-						    </blockquote>
-						</blockquote>
-						<blockquote>
-						  	<p><strong>7.3.1 Defining a multi-project build（定义一个多项目构建）</strong></p>
-						  
-						  	<blockquote>
-						    	<p>要定义一个多project，你需要创建一个settings file。这个“设置文件”放在源代码树的根目录下，并指定哪些项目需要构建。这个文件必须叫做“settings.gradle”。例如，我们使用一个简单的继承结构。相关文件如下:</p>
-						    </blockquote>
-							<pre class="brush: groovy;">
-								include "shared", "api", "services:webservice", "services:shared"
-							</pre>
-						</blockquote>	
-						<blockquote>
-							<p><strong>7.3.2 Common configuration（公共配置）</strong></p>
-							  
-							<blockquote>
-							    <p>对于大多数多project的构建，存在一些所有project共同的配置。在我们的例子中，我们会定义这些公共配置在项目的根目录，使用一个技术叫做“configuration injection，配置注入”。这里，根项目就像一个容器，subprojects方法会迭代这个容器中的元素（实例中的project），并注入指定的配置。这样我们可以简单的为所有的构建定义清单内容和一些共同的依赖。</p>
-							    <P>Build.gradle</P>
-							</blockquote>
+								<p>
+									<strong>7.3.2 Common configuration（公共配置）</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										对于大多数多project的构建，存在一些所有project共同的配置。在我们的例子中，我们会定义这些公共配置在项目的根目录，使用一个技术叫做“configuration injection，配置注入”。这里，根项目就像一个容器，subprojects方法会迭代这个容器中的元素（实例中的project），并注入指定的配置。这样我们可以简单的为所有的构建定义清单内容和一些共同的依赖。
+									</p>
+									<P>Build.gradle</P>
+								</blockquote>
 								<pre class="brush: groovy;">
 									subprojects {
 										apply plugin: 'java'
@@ -577,34 +664,182 @@
 										jar {
 											manifest.attributes provider: 'gradle'
 										}
-									}
-								</pre>
-							<blockquote>    
-							    <p>注意到，我们的项目中应用了Java Plugin。这意味着我们在之前的部分看到的task和配置属性都可以在每一个子project中使用。所以，你可以从project的根目录通过“gradle build”命令进行编译，测试和打包。</p>
+									}</pre>
+								<blockquote>
+									<p>
+										注意到，我们的项目中应用了Java Plugin。这意味着我们在之前的部分看到的task和配置属性都可以在每一个子project中使用。所以，你可以从project的根目录通过“gradle build”命令进行编译，测试和打包。
+									</p>
+								</blockquote>
 							</blockquote>
-						</blockquote>
-						<blockquote>
-							<p><strong>7.3.3 Dependencies between projects（项目间的依赖）</strong></p>
-							  
 							<blockquote>
-							    <p>你可以在同一个build中为多个project添加依赖，例如，一个项目的jar文件，被用来给另一个项目编译。在api的build文件中，我们添加了一个由shared产生的jar文件作为依赖。因为这个依赖，Gradle会确保shared会在的api之前完成build。</p>
-							</blockquote>
-							<pre class="brush: groovy;">
+								<p>
+									<strong>7.3.3 Dependencies between projects（项目间的依赖）</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										你可以在同一个build中为多个project添加依赖，例如，一个项目的jar文件，被用来给另一个项目编译。在api的build文件中，我们添加了一个由shared产生的jar文件作为依赖。因为这个依赖，Gradle会确保shared会在的api之前完成build。
+									</p>
+								</blockquote>
+								<pre class="brush: groovy;">
 								dependencies {
 									compile project(':shared')
-								}		
-							</pre>
-						</blockquote>
-						<blockquote>
-							<p><strong>7.3.4 Creating a distribution</strong></p>
-						</blockquote>
+								}</pre>
+							</blockquote>
+							<blockquote>
+								<p id="What is Dependency Management">
+									<strong>8.1 What is dependency management?（什么是依赖管理）</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										大致上，依赖管理是由两部分组成。首先，Gradle需要知道了解你的项目中需要build或者run的东西，以方便它找到他们。我们把它叫做项目依赖的“输入文件”。其次，Gradle需要build和upload你项目中产生的东西。我们叫做项目发布的“输出文件”。
+									</p>
+
+									<p>
+										大部分的项目并不是完全自包含的。他们需要其他项目build的文件，以便进行编译，测试等。例如，为了在项目中使用hibernate，我需要包含一些hibernate的jar包到classpath中。为了运行我的测试，我也许还需要包含一些额外的jar到测试的classpath中，例如jdbc驱动。
+									</p>
+
+									<p>
+										这些来自项目依赖的“输入文件”。Gradle允许你告诉他，你项目的依赖是什么，以便它来负责寻找这些依赖，并让这些依赖变得可用。这些依赖可能需要从一个远程的Maven，Ivy仓库或者本地仓库中下载，又或者在多工程构建中，需要其他项目构建之后提供。我们把这个过程叫做dependency resolution.。
+									</p>
+
+									<p>
+										经常的一些情况是，一个项目的依赖也需要其他的依赖。所以，当Gradle运行你项目的测试时，他也需要去寻找这些依赖。我们称作“transitive dependencies.，传递依赖”。
+									</p>
+
+									<p>
+										大部分工程的主要目的是构建一些在项目之外使用的文件。例如，如果你的项目产生了一个java库，你需要构建一个jar文件，可能是一个source jar包和一些文件，并且要在某个地方发布。
+									</p>
+
+									<p>
+										这些来自项目的“输出文件”，Gradle也会帮你管理。你需要定义你项目的发布，Gradle负责build和publishing他们。Publishing的含义取决于你要做什么。你可能想要拷贝文件到一个本地目录，或者上传文件到远程maven或ivy仓库。我们把这个过程叫做publication。
+									</p>
+								</blockquote>
+							</blockquote>
+							<blockquote>
+								<p>
+									<strong>8.2. Declaring your dependencies，定义你的依赖</strong>
+								</p>
+								<pre class="brush: groovy;">
+								apply plugin: 'java'
+								repositories {
+									mavenCentral()
+								}
+								dependencies {
+									compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+									testCompile group: 'junit', name: 'junit', version: '4.+'
+								} </pre>
+								<blockquote>
+									<p>
+										这是什么意思呢？首先，它说明了要完成这个项目代码的编译，需要hibernate core 3.6.7 Final。脚本中还说明了需要任何版本大于等于4.0的junit去完成测试代码的编译。它还告诉Grade在maven的仓库中去找这些依赖。
+									</p>
+								</blockquote>
+							</blockquote>
+							<blockquote>
+								<p>
+									<strong>8.3 Dependency configurations</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										在Gradle中依赖归属于configurations.中。一个configurations是一个依赖的集合，dependency configurations。你可以用他们来定义项目中额外的依赖。
+									</p>
+
+									<p>Java的plugin定义了一些标准的配置。这些配置是java plugin使用的classpath。</p>
+								</blockquote>
+							</blockquote>
+							<blockquote>
+								<p>
+									<strong>8.4. External dependencies</strong>
+								</p>
+
+								<blockquote>
+									<p>外部依赖就是依赖的文件不是你项目中的。</p>
+								</blockquote>
+								<pre class="brush: groovy;">
+								dependencies {
+									compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+								}</pre>
+							</blockquote>
+							<blockquote>
+								<p>
+									<strong>8.5 Repositories</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										Gradle是如何找到这些外部依赖的？仓库。一个仓库就像一个文件的集合，由group，name，version组成。Gradle可以使用多种仓库格式，例如Maven和Ivy。可以使用多种访问仓库的方式，例如本地文件系统或者HTTP协议。
+									</p>
+
+									<p>默认，Gradle没有定义任何仓库。在使用外部依赖时，你需要定义至少一个仓库。一个选择是使用Maven中心仓库。</p>
+								</blockquote>
+								<pre class="brush: groovy;">
+								repositories {
+									mavenCentral()
+								}</pre>
+								<blockquote>
+									<p>你也可以使用本地的Maven或者Ivy仓库。</p>
+								</blockquote>
+								<pre class="brush: groovy;">
+								repositories {
+									ivy {
+										// URL can refer to a local directory
+										url "../local-repo"
+									}
+								}</pre>
+								<blockquote>
+									<p>一个项目可以拥有多个仓库。Gradle会以指定的顺序在每一个仓库中寻找依赖，并在第一个找到依赖的仓库那停止继续搜索。</p>
+								</blockquote>
+							</blockquote>
+							<blockquote>
+								<p>
+									<strong>8.6. Publishing artifacts</strong>
+								</p>
+
+								<blockquote>
+									<p>
+										Dependency configurations也可以发布文件，这些文件叫做publication artifact，构建。
+									</p>
+
+									<p>
+										Plugins可以很好的完成项目的构建定义工作，所以你通常不需要做什么事情。然后你需要告诉Gradle发布到哪里去。在Gradle中，通过在uploadArchives task中添加仓库位置来完成这件事情。
+									</p>
+								</blockquote>
+								<pre class="brush: groovy;">
+								uploadArchives {
+									repositories {
+										ivy {
+											credentials {
+												username "username"
+												password "pw"
+											}
+											url "http://repo.mycompany.com"
+										}
+									}
+								}</pre>
+								<blockquote>
+									<p>
+										在命令行中运行gradle uploadArchives。Gradle就会build和upload你的jar文件。Gradle还会生成和上传一个ivy.xml的文件。你也可以发布到Maven的仓库。注意，你需要应用Maven的plugin，才能发布到Maven的仓库。
+									</p>
+								</blockquote>
+								<pre class="brush: groovy;">
+								apply plugin: 'maven'
+								uploadArchives {
+									repositories {
+										mavenDeployer {
+											repository(url: "file://localhost/tmp/myRepo/")
+										}
+									}
+								}</pre>
+							</blockquote>
+						</div>
 					</div>
-				</div>
-				<div class="ez-box">
-					<div id="comments">
-						<!-- Duoshuo Comment BEGIN -->
-						<div class="ds-thread"></div>
-						<script type="text/javascript">
+					<div class="ez-box">
+						<div id="comments">
+							<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
 						var duoshuoQuery = {short_name:"benzeph"};
 							(function() {
 								var ds = document.createElement('script');
@@ -615,20 +850,26 @@
 								|| document.getElementsByTagName('body')[0]).appendChild(ds);
 							})();
 						</script>
-						<!-- Duoshuo Comment END -->
+							<!-- Duoshuo Comment END -->
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="ez-box">
-		<div id="contact">
-			<span><a href="https://github.com/benzeph" class="black-orange-link">Github</a></span>
-			<span><a href="about-me.html" class="black-orange-link">关于我</a></span>
-			<span><script src="http://s16.cnzz.com/stat.php?id=5120915&web_id=5120915" language="JavaScript"></script></span>
-			<span>2013</span>
+		<div class="ez-box">
+			<div id="contact">
+				<span>
+					<a href="https://github.com/benzeph" class="black-orange-link">Github</a>
+				</span>
+				<span>
+					<a href="about-me.html" class="black-orange-link">关于我</a>
+				</span>
+				<span>
+					<script src="http://s16.cnzz.com/stat.php?id=5120915&web_id=5120915" language="JavaScript"></script>
+				</span>
+				<span>2013</span>
+			</div>
 		</div>
 	</div>
-</div>
 </body>
 </html>
