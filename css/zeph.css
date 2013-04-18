@@ -58,7 +58,6 @@
     color: #ff6c00;
 }
 
-
 .grey-link:link{
     text-decoration: none;
     color: #626262;
@@ -109,15 +108,23 @@
     text-align: left;
 }
 
+.article_title{
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 .li-ns {
     list-style: none;
     text-align: left;
     font-family: 'Open Sans', sans-serif;
     margin-bottom: 5px;
 }
+
 #search-box{
     margin-top: 20px;
 }
+
 #about-me-image{
     margin-top: 10px;
     text-align: left;
@@ -132,12 +139,14 @@
     margin-top: 30px;
     margin-bottom: 40px;
 }
+
 #motto{
     text-align: left;
     margin-left: 15%;
     margin-bottom: 50px;
     font-family: 'Open Sans', sans-serif;
 }
+
 #contact{
     margin-left: 15%;
     text-align: left;
@@ -149,14 +158,17 @@
     margin: 5px auto;
     margin-top: 15px;
 }
+
 #leave-me-message{
     text-align: left;
 }
+
 #leave-me-message-comments{
     margin: 5px auto;
     margin-right: 15%;
     margin-top: 15px;
 }
+
 #about-me-text{
     text-align: left;
     margin-left: 20px;
