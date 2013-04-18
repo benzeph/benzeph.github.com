@@ -60,7 +60,6 @@
 							<div class="ez-fl ez-negmr ez-66">
 								<div class="ez-box">
 									<div class="article">
-										<blockquote>
 											<h1>Gradle使用指南（译）</h1>
 
 											<p> <em>本文中的内容来自Gradle User Guide，由于本人英文水平有限，所以部分翻译内容可能不准确。</em>
@@ -97,7 +96,6 @@
 											<p>3.添加GRADLE_HOME/bin到环境变量</p>
 
 											<p>4.在命令行中输入：gradle –v，测试是否安装成功</p>
-										</blockquote>
 									</div>
 								</div>
 							</div>
@@ -120,7 +118,6 @@
 					</div>
 					<div class="ez-box">
 						<div class="article">
-							<blockquote>
 								<p id="Build Script Basics">
 									<strong>6 Build Script Basics（构建脚本基础）</strong>
 								</p>
@@ -143,8 +140,6 @@
 										每一个project是有一个或多个task组成。一个task代表着一个构建平台的一些原子性工作。它可能是编译一些类，创建一个jar包，生成javadoc，或者发布某些构件内容到仓库。
 									</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>6.2 Helloworld</strong>
 								</p>
@@ -159,8 +154,6 @@
 										println 'Hello world!'
 									}
 								}		</pre>
-							</blockquote>
-							<blockquote>
 								<blockquote>
 									<p>在命令行中，进入到脚本文件的目录，输入：gradle -q hello</p>
 
@@ -170,8 +163,6 @@
 										这个构建脚本定义了一个单独的名为hello的task，并给它添加了执行的动作。这个动作是一个括号，里面包含了待执行的Groovy代码。如果你觉得它有点像ant的target，好吧，你对了。Gradle的task等同于Ant的target，但是正如你所看到的，比ant更强大。
 									</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>6.3 定义task的快捷方式</strong>
 								</p>
@@ -182,8 +173,6 @@
 								<blockquote>
 									<p>一样，这里定义了一个叫做hello的task。只有一个括号。这也是一种常用的写法。</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>6.4 Build scripts are code（脚本就是代码）</strong>
 								</p>
@@ -212,8 +201,6 @@
 								<blockquote>
 									<p>输出：0 1 2 3</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>6.5 Task dependencies（Task的依赖）</strong>
 								</p>
@@ -253,8 +240,6 @@
 
 									<p>taskX对taskY的依赖在taskY声明之前就定义了。这一点对于多project构建很重要。</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>6.6 Dynamic tasks（动态的task）</strong>
 								</p>
@@ -281,10 +266,8 @@
 
 									<p>I'm task number 2</p>
 								</blockquote>
-							</blockquote>
 						</div>
 						<div class="article">
-							<blockquote>
 								<p>
 									<strong>6.7. Manipulating existing tasks（操作存在的task）</strong>
 								</p>
@@ -333,8 +316,6 @@
 										doFirst和doLast能够被执行多次。在task的action列表的开始和最后都添加了一个action。当task执行，action列表中的action会被顺序执行。操作符&lt;&lt;是doLast的别名。
 									</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>6.8 Shortcut notations（快捷标记）</strong>
 								</p>
@@ -360,8 +341,6 @@
 
 									<p>这样可以使代码非常美观，特别是当你使用由plugin提供的task时。</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>6.9 Extra task properties（其他task属性）</strong>
 								</p>
@@ -383,8 +362,6 @@
 
 									<p>myValue</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>6.10 Using Ant Tasks</strong>
 								</p>
@@ -424,8 +401,6 @@
 								<p>
 									<strong>6.13 Configure by DAG</strong>
 								</p>
-							</blockquote>
-							<blockquote>
 								<p id="Java Quickstart">
 									<strong>7 Java Quickstart（使用Java）</strong>
 								</p>
@@ -446,8 +421,6 @@
 										Java Plugin是基于约定的。这意味着这个plugin为你的项目的许多方面都定义了默认值，例如Java源代码的位置。如果你依循这些约定，你通常不需要做太多的事情就可以得到一个非常好用的构建。Gradle也允许你定制项目，如果你不想或不能依循这些约定。
 									</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>7.2 A basic Java project(一个基本的Java的项目)</strong>
 								</p>
@@ -463,8 +436,6 @@
 										Gradle希望可以在src/main/java目录下找到你的源代码在src/test/java下找到你的测试用例。另外，任何存放在src/main/resources下的文件都会打包到jar中。任何存放在src/test/resources中的文件都会用来运行测试。所有的输出文件都在build目录下，而jar文件就存放在build/libs目录。
 									</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>7.2.1 Building the project（构建项目）</strong>
 								</p>
@@ -515,8 +486,6 @@
 										check：编译和测试你的代码。其他插件可能会添加更多检测到这个task。例如，如果你使用Code-quality的plugin，这个任务还会运行代码风格检查。
 									</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>7.2.2 External dependencies（外部依赖）</strong>
 								</p>
@@ -541,8 +510,6 @@
 										testCompile group: 'junit', name: 'junit', version: '4.+'
 									}				</pre>
 								<blockquote></blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>7.2.3 Customising the project（定制项目）</strong>
 								</p>
@@ -569,8 +536,6 @@
 								test {
 									systemProperties 'property': 'value'
 								}	</pre>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>7.2.4 Publishing the JAR file（发布Jar）</strong>
 								</p>
@@ -591,8 +556,6 @@
 								<blockquote>
 									<p>运行命令“gradle uploadArchives.”</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>7.2.5 Creating an Eclipse project（创建一个Eclipse项目）</strong>
 								</p>
@@ -604,8 +567,6 @@
 								<blockquote>
 									<p>执行“gradle eclipse”命令</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>7.3 Multi-project Java build（多项目构建）</strong>
 								</p>
@@ -625,8 +586,6 @@
 										这里有三个project。Project api产生一个jar文件，它会传递给客户端为你的XML的webservice提供一个Java客户端。Project webservice是一个返回XML的webapp。Project shared包含api和webservice使用的代码。
 									</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>7.3.1 Defining a multi-project build（定义一个多项目构建）</strong>
 								</p>
@@ -638,8 +597,6 @@
 								</blockquote>
 								<pre class="brush: groovy;">
 								include "shared", "api", "services:webservice", "services:shared"</pre>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>7.3.2 Common configuration（公共配置）</strong>
 								</p>
@@ -670,8 +627,6 @@
 										注意到，我们的项目中应用了Java Plugin。这意味着我们在之前的部分看到的task和配置属性都可以在每一个子project中使用。所以，你可以从project的根目录通过“gradle build”命令进行编译，测试和打包。
 									</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>7.3.3 Dependencies between projects（项目间的依赖）</strong>
 								</p>
@@ -685,8 +640,6 @@
 								dependencies {
 									compile project(':shared')
 								}</pre>
-							</blockquote>
-							<blockquote>
 								<p id="What is Dependency Management">
 									<strong>8.1 What is dependency management?（什么是依赖管理）</strong>
 								</p>
@@ -716,8 +669,6 @@
 										这些来自项目的“输出文件”，Gradle也会帮你管理。你需要定义你项目的发布，Gradle负责build和publishing他们。Publishing的含义取决于你要做什么。你可能想要拷贝文件到一个本地目录，或者上传文件到远程maven或ivy仓库。我们把这个过程叫做publication。
 									</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>8.2. Declaring your dependencies，定义你的依赖</strong>
 								</p>
@@ -735,8 +686,6 @@
 										这是什么意思呢？首先，它说明了要完成这个项目代码的编译，需要hibernate core 3.6.7 Final。脚本中还说明了需要任何版本大于等于4.0的junit去完成测试代码的编译。它还告诉Grade在maven的仓库中去找这些依赖。
 									</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>8.3 Dependency configurations</strong>
 								</p>
@@ -748,8 +697,6 @@
 
 									<p>Java的plugin定义了一些标准的配置。这些配置是java plugin使用的classpath。</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>8.4. External dependencies</strong>
 								</p>
@@ -761,8 +708,6 @@
 								dependencies {
 									compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
 								}</pre>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>8.5 Repositories</strong>
 								</p>
@@ -791,8 +736,6 @@
 								<blockquote>
 									<p>一个项目可以拥有多个仓库。Gradle会以指定的顺序在每一个仓库中寻找依赖，并在第一个找到依赖的仓库那停止继续搜索。</p>
 								</blockquote>
-							</blockquote>
-							<blockquote>
 								<p>
 									<strong>8.6. Publishing artifacts</strong>
 								</p>
@@ -832,7 +775,6 @@
 										}
 									}
 								}</pre>
-							</blockquote>
 						</div>
 					</div>
 					<div class="ez-box">
