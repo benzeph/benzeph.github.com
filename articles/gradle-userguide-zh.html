@@ -19,9 +19,6 @@
 				<li >
 					<a href="../index.html">文章</a>
 				</li>
-				<li >
-					<a href="../about-me.html">关于我</a>
-				</li>
 			</ul>
 		</div>
 	</div>
@@ -98,11 +95,11 @@
 								通过命令“gradle”运行一个Gradle构建。这个命令会去当前文件夹寻找一个叫做build.gradle的文件。创建一个叫做build.gradle的文件，它是一个构建配置脚本，在里面输入以下内容：
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 task hello {
-doLast {
-println 'Hello world!'
-}
+	doLast {
+		println 'Hello world!'
+	}
 }		</pre>
 						<blockquote>
 							<p>在命令行中，进入到脚本文件的目录，输入：gradle -q hello</p>
@@ -116,21 +113,10 @@ println 'Hello world!'
 						<p>
 							<strong>6.3 定义task的快捷方式</strong>
 						</p>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 task hello << {
-println 'Hello world!'
+	println 'Hello world!'
 }		
-</pre>
-						<blockquote>
-							<p>一样，这里定义了一个叫做hello的task。只有一个括号。这也是一种常用的写法。</p>
-						</blockquote>
-						<p>
-							<strong>6.4 Build scripts are code（脚本就是代码）</strong>
-						</p>
-						<blockquote>
-							<p>Gradle脚本向你展示了Groovy的强大，就像开胃菜一样。看看下面这个：</p>
-						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
 task upper << {
 	String someString = 'mY_nAmE'
 	println "Original: " + someString
@@ -145,7 +131,7 @@ task upper << {
 
 							<p>又如：</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 task count << {
 	4.times { print "$it " }
 }					</pre>
@@ -159,7 +145,7 @@ task count << {
 						<blockquote>
 							<p>你可能会猜到，可以在task间声明依赖。例如：</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 task hello << {
 	println 'Hello world!'
 }
@@ -175,7 +161,7 @@ task intro(dependsOn: hello) << {
 
 							<p>添加一个依赖，相关的task不一定要在它之前存在。例如：</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 task taskX(dependsOn: 'taskY') << {
 	println 'taskX'
 }
@@ -198,7 +184,7 @@ task taskY << {
 						<blockquote>
 							<p>Groovy不仅可以定义一个task做什么事情。例如，你可以用它来动态的创建一个新的task。</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 4.times { counter ->
 	task "task$counter" << {
 		println "I'm task number $counter"
@@ -224,7 +210,7 @@ task taskY << {
 						<blockquote>
 							<p>一旦task被创建，可以通过api访问。这一点和ant不同。例如，你可以创建一个额外的依赖：</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">task0.dependsOn task2, task3</pre>
+						<pre class="prettyprint linenums">task0.dependsOn task2, task3</pre>
 						<blockquote>
 							<p>输出：</p>
 
@@ -236,7 +222,7 @@ task taskY << {
 
 							<p>或者你可以添加一个行为给一个存在的task。</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 task hello << {
 	println 'Hello Earth'
 }
@@ -275,7 +261,7 @@ hello << {
 								就像你之前看到例子一样，有一个便捷的标记可以访问一个存在的task。每一个task都可以用，就像build脚本的一个属性。
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 task hello << {
 	println 'Hello world!'
 }
@@ -300,7 +286,7 @@ hello.doLast {
 								你可以给一个task添加你自己属性。例如，添加一个属性myProperty,，给ext.myProperty设置一个初始值。从这时开始，这个属性可以被get和set就像预定义task属性。
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 task myTask {
 	ext.myProperty = "myValue"
 }
@@ -325,7 +311,7 @@ task printTaskProperties << {
 
 							<p>输入命令“gradle -q”</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 defaultTasks 'clean', 'run'
 task clean << {
 	println 'Default Cleaning!'
@@ -378,7 +364,7 @@ task other << {
 						<blockquote>
 							<p>看例子，如果你要是使用java，需要添加以下的代码：</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">apply plugin: 'java'</pre>
+						<pre class="prettyprint linenums">apply plugin: 'java'</pre>
 						<blockquote>
 							<p>这就是要定义一个java项目，你所要做的事情。它会将Java的plugin添加到你的项目，即给你的项目添加一些task。</p>
 
@@ -445,7 +431,7 @@ task other << {
 								通常，一个java项目还会需要对额外jar包需求的依赖。要将jar文件引入到你的项目，你必须告诉gradle在哪里可以找到它。在Gradle中，像jar包这种构建，都是放在仓库中。仓库可以用来获取一个项目的依赖的位置，或者发布一个项目的构建的位置。例如，使用公共的Maven仓库。
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 repositories {
 	mavenCentral()
 }			</pre>
@@ -454,7 +440,7 @@ repositories {
 								让我们来添加一些依赖。这里，我们声明一个我们的产品类需要一个编译期的依赖commons collections，测试类也需要一个编译期的类junit。
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 dependencies {
 	compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
 	testCompile group: 'junit', name: 'junit', version: '4.+'
@@ -469,7 +455,7 @@ dependencies {
 								Java的plugin会添加很多属性到你的项目中。这些属性都有默认的值，通常是够用的。如果你觉得不合适，你可以很方便的修改它们。举个例子，这里，我们为我们的java项目指定一个版本号，对jar清单添加一些属性。
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 sourceCompatibility = 1.5
 version = '1.0'
 jar {
@@ -482,7 +468,7 @@ jar {
 								Java的plugin添加的task都是一些常规task，跟将它们直接定义在build文件中一样。这意味着你可以使用之前章节学到的机制去定制task。例如你可以设置一个task的属性，给一个task添加行为，修改一个task的依赖，或者完全替代一个task。在我们的例子中，我们会配置一个test task，它是Test类型，以便在测试时，添加一些系统属性。
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 test {
 systemProperties 'property': 'value'
 }	</pre>
@@ -495,7 +481,7 @@ systemProperties 'property': 'value'
 								通常Jar包都是要发布到某一个位置。要完成这件事，你需要告诉Gradle在哪里发布。在Gradle中，像jar文件这样的构建都是发布到仓库中。在我们的例子中，我们将会发布到一个本地的仓库。你也可以发布到远程仓库或者多个仓库中：
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 uploadArchives {
 	repositories {
 		flatDir {
@@ -513,7 +499,7 @@ uploadArchives {
 						<blockquote>
 							<p>要想导入项目到Eclipse，你需要添加另一个plugin到build文件：build.gradle</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">apply plugin: 'eclipse'</pre>
+						<pre class="prettyprint linenums">apply plugin: 'eclipse'</pre>
 						<blockquote>
 							<p>执行“gradle eclipse”命令</p>
 						</blockquote>
@@ -545,7 +531,7 @@ uploadArchives {
 								要定义一个多project，你需要创建一个settings file。这个“设置文件”放在源代码树的根目录下，并指定哪些项目需要构建。这个文件必须叫做“settings.gradle”。例如，我们使用一个简单的继承结构。相关文件如下:
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 include "shared", "api", "services:webservice", "services:shared"</pre>
 						<p>
 							<strong>7.3.2 Common configuration（公共配置）</strong>
@@ -557,7 +543,7 @@ include "shared", "api", "services:webservice", "services:shared"</pre>
 							</p>
 							<P>Build.gradle</P>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 subprojects {
 	apply plugin: 'java'
 	apply plugin: 'eclipse-wtp'
@@ -586,7 +572,7 @@ subprojects {
 								你可以在同一个build中为多个project添加依赖，例如，一个项目的jar文件，被用来给另一个项目编译。在api的build文件中，我们添加了一个由shared产生的jar文件作为依赖。因为这个依赖，Gradle会确保shared会在的api之前完成build。
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 dependencies {
 compile project(':shared')
 }</pre>
@@ -622,14 +608,14 @@ compile project(':shared')
 						<p>
 							<strong>8.2. Declaring your dependencies，定义你的依赖</strong>
 						</p>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 apply plugin: 'java'
 repositories {
-mavenCentral()
+	mavenCentral()
 }
 dependencies {
-compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
-testCompile group: 'junit', name: 'junit', version: '4.+'
+	compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+	testCompile group: 'junit', name: 'junit', version: '4.+'
 } </pre>
 						<blockquote>
 							<p>
@@ -654,9 +640,9 @@ testCompile group: 'junit', name: 'junit', version: '4.+'
 						<blockquote>
 							<p>外部依赖就是依赖的文件不是你项目中的。</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 dependencies {
-compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+	compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
 }</pre>
 						<p>
 							<strong>8.5 Repositories</strong>
@@ -669,19 +655,19 @@ compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
 
 							<p>默认，Gradle没有定义任何仓库。在使用外部依赖时，你需要定义至少一个仓库。一个选择是使用Maven中心仓库。</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 repositories {
-mavenCentral()
+	mavenCentral()
 }</pre>
 						<blockquote>
 							<p>你也可以使用本地的Maven或者Ivy仓库。</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 repositories {
-ivy {
-	// URL can refer to a local directory
-	url "../local-repo"
-}
+	ivy {
+		// URL can refer to a local directory
+		url "../local-repo"
+	}
 }</pre>
 						<blockquote>
 							<p>一个项目可以拥有多个仓库。Gradle会以指定的顺序在每一个仓库中寻找依赖，并在第一个找到依赖的仓库那停止继续搜索。</p>
@@ -699,7 +685,7 @@ ivy {
 								Plugins可以很好的完成项目的构建定义工作，所以你通常不需要做什么事情。然后你需要告诉Gradle发布到哪里去。在Gradle中，通过在uploadArchives task中添加仓库位置来完成这件事情。
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 uploadArchives {
 repositories {
 	ivy {
@@ -716,7 +702,7 @@ repositories {
 								在命令行中运行gradle uploadArchives。Gradle就会build和upload你的jar文件。Gradle还会生成和上传一个ivy.xml的文件。你也可以发布到Maven的仓库。注意，你需要应用Maven的plugin，才能发布到Maven的仓库。
 							</p>
 						</blockquote>
-						<pre class="prettyprint linenums Lang-html">
+						<pre class="prettyprint linenums">
 apply plugin: 'maven'
 uploadArchives {
 repositories {
