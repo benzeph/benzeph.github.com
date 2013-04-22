@@ -5,64 +5,48 @@
 	<title>Zeph's Blog</title>
 	<link rel="stylesheet" type="text/css" media="screen,projection" href="../css/ez-min.css">
 	<link rel="stylesheet" type="text/css" href="../css/zeph.css">
-	<link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link id="scrollUpTheme" rel="stylesheet" href="../css/pill.css">
-	<script type="text/javascript" src="../js/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.scrollUp.min.js"></script>
+	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="../css/bootstrap-responsive.css" rel="stylesheet">
+	<style type="text/css">body{font-family:Arial,Helvetica,sans-serif,"宋体"}</style>
 </head>
-	<script type="text/javascript">
-		$(function () {
-			$.scrollUp();
-		});
-	</script>
 <body>
-	<div class="ez-wr">
-		<div class="ez-box">
-			<div id="logo">
-				<a href="../index.html" class="darkgrey-link">
-					<img src="../img/logo.gif" />
-				</a>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2">
+				<ol>
+					<li class="li-ns">
+						<a href="../tags/tag-git.html" class="grey-link">Git(1)</a>
+					</li>
+					<li class="li-ns">
+						<a href="../tags/tag-clean-code.html" class="grey-link">CleanCode(1)</a>
+					</li>
+					<li class="li-ns">
+						<a href="../tags/tag-gradle.html" class="grey-link">Gradle(1)</a>
+					</li>
+					<li class="li-ns">
+						<a href="../tags/tag-design-pattern.html" class="grey-link">DesignPattern(1)</a>
+					</li>
+				</ol>
 			</div>
-		</div>
-		<div class="ez-box">
-			<!-- Module 2A -->
-			<div class="ez-wr">
-				<div class="ez-fl ez-negmr ez-15">
-					<div class="ez-box">
-						<ol>
-							<li class="li-ns">
-								<a href="../tags/tag-git.html" class="grey-link">Git(1)</a>
-							</li>
-							<li class="li-ns">
-								<a href="../tags/tag-clean-code.html" class="grey-link">CleanCode(1)</a>
-							</li>
-							<li class="li-ns">
-								<a href="../tags/tag-gradle.html" class="grey-link">Gradle(1)</a>
-							</li>
-							<li class="li-ns">
-								<a href="../tags/tag-design-pattern.html" class="grey-link">DesignPattern(1)</a>
-							</li>
-						</ol>
-					</div>
+			<div class="span10">
+				<div id="logo">
+					<a href="../index.html" >
+						<img src="../img/logo.gif" />
+					</a>
 				</div>
-				<div class="ez-last ez-oh">
-					<div class="ez-box">
-						<div class="article">
-							<div class="article_title">常用Git开发命令和开发模式指南</div>
-							<p>
-								首先推荐一个网站：
-								<a href="http://git-scm.com/book/zh" class="black-underline-link">http://git-scm.com/book/zh</a>
-								（访问可能需要梯子，推荐GoAgent）
-							</p>
-							<p>Pro Git的中文版，这里总结的内容主要来自这本书。</p>
-						</div>
+				<div class="article">
+					<h1>常用Git开发命令和开发模式指南</h1>
+					<div class="well">
+						首先推荐一个网站：
+						<a href="http://git-scm.com/book/zh">http://git-scm.com/book/zh</a>
+						（访问可能需要梯子，推荐GoAgent）
+						Pro Git的中文版，这里总结的内容主要来自这本书。
 					</div>
-					<div class="ez-box">
-						<div id="comments">
-							<!-- Duoshuo Comment BEGIN -->
-							<div class="ds-thread"></div>
-							<script type="text/javascript">
+					<div id="comments">
+						<!-- Duoshuo Comment BEGIN -->
+						<div class="ds-thread"></div>
+						<script type="text/javascript">
 						var duoshuoQuery = {short_name:"benzeph"};
 							(function() {
 								var ds = document.createElement('script');
@@ -73,29 +57,34 @@
 								|| document.getElementsByTagName('body')[0]).appendChild(ds);
 							})();
 						</script>
-							<!-- Duoshuo Comment END -->
-						</div>
+						<!-- Duoshuo Comment END -->
+					</div>
+					<div id="contact">
+						<span>
+							<a href="https://github.com/benzeph" class="black-orange-link">Github</a>
+						</span>
+						<span>
+							<a href="http://weibo.com/benzeph" class="black-orange-link">微博</a>
+						</span>
+						<span>
+							<a href="../about-me.html" class="black-orange-link">关于我</a>
+						</span>
+						<span>
+							<script src="http://s16.cnzz.com/stat.php?id=5120915&web_id=5120915" language="JavaScript"></script>
+						</span>
+						<span>2013</span>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="ez-box">
-			<div id="contact">
-				<span>
-					<a href="https://github.com/benzeph" class="black-orange-link">Github</a>
-				</span>
-				<span>
-					<a href="http://weibo.com/benzeph" class="black-orange-link">微博</a>
-				</span>
-				<span>
-					<a href="../about-me.html" class="black-orange-link">关于我</a>
-				</span>
-				<span>
-					<script src="http://s16.cnzz.com/stat.php?id=5120915&web_id=5120915" language="JavaScript"></script>
-				</span>
-				<span>2013</span>
-			</div>
-		</div>
-	</div>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.scrollUp.min.js"></script>
+		<script type="text/javascript">
+		$(function () {
+			$.scrollUp();
+		});
+	</script>
 </body>
-</html>
+
+	</html>
