@@ -2,78 +2,67 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="name" content="Zeph's Blog">
+	<meta name="author" content="朱本威">
+	<meta name="description" content="朱本威,ThoughtWorks软件工程师,关注Java|Web前端|Android">
+	<meta name="keywords" content="朱本威,ThoughtWorks,Zeph,Ben Zeph,Git,Gradle,CleanCode,设计模式">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Zeph's Blog</title>
-	<link rel="stylesheet" type="text/css" media="screen,projection" href="css/ez-min.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/zeph.css">
-	<link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'></head>
-<body style="font-family:微软雅黑">
-	<div class="ez-wr">
-		<div class="ez-box">
-			<div id="logo">
-				<a href="index.html">
-					<img src="img/logo.gif" />
-				</a>
+	<style type="text/css">body{font-family:Arial,Helvetica,sans-serif,"宋体"}</style>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2">
+				<ol>
+					<li class="li-ns">
+						<a href="tags/tag-git.html" class="grey-link">Git(1)</a>
+					</li>
+					<li class="li-ns">
+						<a href="tags/tag-clean-code.html" class="grey-link">CleanCode(1)</a>
+					</li>
+					<li class="li-ns">
+						<a href="tags/tag-gradle.html" class="grey-link">Gradle(1)</a>
+					</li>
+					<li class="li-ns">
+						<a href="tags/tag-design-pattern.html" class="grey-link">DesignPattern(1)</a>
+					</li>
+				</ol>
 			</div>
-		</div>
-		<div class="ez-box">
-			<!-- Module 2A -->
-			<div class="ez-wr">
-				<div class="ez-fl ez-negmr ez-15">
-					<div class="ez-box">
-						<ol>
-							<li class="li-ns">
-								<a href="tags/tag-git.html" class="grey-link">Git(1)</a>
-							</li>
-							<li class="li-ns">
-								<a href="tags/tag-clean-code.html" class="grey-link">CleanCode(1)</a>
-							</li>
-							<li class="li-ns">
-								<a href="tags/tag-gradle.html" class="grey-link">Gradle(1)</a>
-							</li>
-							<li class="li-ns">
-								<a href="tags/tag-design-pattern.html" class="grey-link">DesignPattern(1)</a>
-							</li>
-						</ol>
+			<div class="span10">
+				<div id="logo">
+					<a href="index.html">
+						<img src="img/logo.gif" />
+					</a>
+				</div>
+				<div class="row-fluid">
+					<div class="span5">
+						<img src="img/about-me.gif" class="img-rounded"></div>
+					<div class="span5">
+						<div id="about-me-text">
+							<p>Ben Zeph(Zhu Benwei)</p>
+							<p>
+								A ThoughtWorker @
+								<a href="http://map.baidu.com/?newmap=1&ie=utf-8&s=s%26wd%3D%E5%A4%A9%E5%BA%9C%E8%BD%AF%E4%BB%B6%E5%9B%ADE1%E5%BA%A7" >Chengdu Office</a>
+								(2013-至今)
+							</p>
+							<p>关注Java|Web前端|Android</p>
+							<p>
+								CSDN博客
+								<a href="http://blog.csdn.net/benw1988" >http://blog.csdn.net/benw1988</a>
+							</p>
+							<p>阅读过的：</p>
+							<script type="text/javascript" src="http://www.douban.com/service/badge/benw1988/?show=collection&amp;n=8&amp;columns=4&amp;hideself=yes&amp;cat=book" ></script>
+						</div>
 					</div>
 				</div>
-				<div class="ez-last ez-oh">
-					<div class="ez-box">
-						<div class="ez-fl ez-negmr ez-50">
-							<div class="ez-box">
-								<div id="about-me-image">
-									<img src="img/about-me.gif"  width="500" height="375"></div>
-							</div>
-						</div>
-						<div class="ez-last ez-oh">
-							<div class="ez-box">
-								<div id="about-me-text">
-									<blockquote>
-										<p>Ben Zeph(Zhu Benwei)</p>
-										<p>
-											A ThoughtWorker @
-											<a href="http://map.baidu.com/?newmap=1&ie=utf-8&s=s%26wd%3D%E5%A4%A9%E5%BA%9C%E8%BD%AF%E4%BB%B6%E5%9B%ADE1%E5%BA%A7" class="black-underline-link">Chengdu Office</a>
-											(2013-至今)
-										</p>
-										<p>关注Java|Web前端|Android</p>
-										<p>
-											CSDN博客
-											<a href="http://blog.csdn.net/benw1988" class="black-underline-link">http://blog.csdn.net/benw1988</a>
-										</p>
-										<p>阅读过的：</p>
-										<script type="text/javascript" src="http://www.douban.com/service/badge/benw1988/?show=collection&amp;n=8&amp;columns=4&amp;hideself=yes&amp;cat=book" ></script>
-									</blockquote>
-
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="ez-box">
-						<div id="leave-me-message">给我留言:</div>
-						<div id="leave-me-message-comments">
-							<!-- Duoshuo Comment BEGIN -->
-							<div class="ds-thread"></div>
-							<script type="text/javascript">
+				<div id="leave-me-message">给我留言:</div>
+				<div id="leave-me-message-comments">
+					<!-- Duoshuo Comment BEGIN -->
+					<div class="ds-thread"></div>
+					<script type="text/javascript">
 						var duoshuoQuery = {short_name:"benzeph"};
 							(function() {
 								var ds = document.createElement('script');
@@ -84,26 +73,24 @@
 								|| document.getElementsByTagName('body')[0]).appendChild(ds);
 							})();
 						</script>
-							<!-- Duoshuo Comment END -->
-						</div>
-					</div>
+					<!-- Duoshuo Comment END -->
+				</div>
+				<div id="contact">
+					<span>
+						<a href="https://github.com/benzeph" class="black-orange-link">Github</a>
+					</span>
+					<span>
+						<a href="about-me.html" class="black-orange-link">关于我</a>
+					</span>
+					<span>
+						<script src="http://s16.cnzz.com/stat.php?id=5120915&web_id=5120915" language="JavaScript"></script>
+					</span>
+					<span>2013</span>
 				</div>
 			</div>
 		</div>
-		<div class="ez-box">
-			<div id="contact">
-				<span>
-					<a href="https://github.com/benzeph" class="black-orange-link">Github</a>
-				</span>
-				<span>
-					<a href="about-me.html" class="black-orange-link">关于我</a>
-				</span>
-				<span>
-					<script src="http://s16.cnzz.com/stat.php?id=5120915&web_id=5120915" language="JavaScript"></script>
-				</span>
-				<span>2013</span>
-			</div>
-		</div>
 	</div>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 </body>
 </html>
