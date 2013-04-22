@@ -91,9 +91,12 @@
     list-style: none;
     text-align: left;
 }
+
 .footer{
     margin-left: 10px;
+    margin-bottom: 10px;
 }
+
 #about-me-image{
     margin-top: 10px;
     text-align: left;
