@@ -11,7 +11,6 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/zeph.css">
-	<link rel="stylesheet" href="css/harvesthq.chosen/chosen.css" />
 	<link id="scrollUpTheme" rel="stylesheet" href="css/pill.css">
 	<style type="text/css">body{font-family:Arial,Helvetica,sans-serif,"宋体"}</style>
 </head >
@@ -114,19 +113,6 @@
 				</div>
 			</div>
 			<div class="span3">
-				<div id="search-box">
-					<select class="chosen" data-placeholder="文章搜索" style="width:auto;" onchange="self.location.href=options[selectedIndex].value">
-						<option ></option>
-						<option value="articles/use-maven.html">Maven的使用</option>
-						<option value="articles/design-pattern.html">设计模式</option>
-						<option value="articles/clean-code.html">代码整洁</option>
-						<option value="articles/gradle-userguide-zh.html">Gradle使用指南（译）</option>
-						<option value="articles/my-git-pro.html">常用Git开发命令和开发模式指南</option>
-						<option value="articles/user-stories-applied-for-agile-software-development.html">用户故事与敏捷方法</option>
-						<option value="articles/continuous-integration.html">持续集成CI</option>
-						<option value="articles/test-driven-development.html">测试驱动开发</option>
-					</select>
-				</div>
 				<div id="about-me">
 					<p class="text-error lead">关于我</p>
 					<p class="text-muted">我叫 朱本威</p>
@@ -134,11 +120,8 @@
 					<p>
 						目前就职于
 						<a href="http://www.thoughtworks.com/" target="_blank">ThoughtWorks</a>
-						中国
-					</p>
-					<p>
-						@
-						<a href="http://map.baidu.com/?newmap=1&ie=utf-8&s=s%26wd%3D%E5%A4%A9%E5%BA%9C%E8%BD%AF%E4%BB%B6%E5%9B%ADE1%E5%BA%A7" target="_blank">Chengdu Office</a>
+						中国（
+						<a href="http://map.baidu.com/?newmap=1&ie=utf-8&s=s%26wd%3D%E5%A4%A9%E5%BA%9C%E8%BD%AF%E4%BB%B6%E5%9B%ADE1%E5%BA%A7" target="_blank">成都</a>）
 					</p>
 					<p>看的书籍：</p>
 					<script type="text/javascript" src="http://www.douban.com/service/badge/benw1988/?show=collection&amp;n=8&amp;columns=2&amp;picsize=medium&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book" ></script>
@@ -172,7 +155,6 @@
 	<script type="text/javascript" src="js/bootstrap-modal.js"></script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.scrollUp.min.js"></script>
-	<script src='css/harvesthq.chosen/chosen.jquery.js'></script>
 	<script>
 		jQuery(document).ready(function(){
 			jQuery(".chosen").data("placeholder","Select Frameworks...").chosen();
