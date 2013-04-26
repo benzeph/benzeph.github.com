@@ -10,7 +10,6 @@
 	<link href="../css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="../css/prettify.css" type="text/css" rel="stylesheet" />
 	<link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative:900' rel='stylesheet' type='text/css'>
-
 	<style type="text/css">body{font-family:Arial,Helvetica,sans-serif,"宋体"}</style>
 </head>
 <body  onload="prettyPrint()">
@@ -58,44 +57,44 @@
 					<h1>Gradle使用指南（译）</h1>
 					<div class="well">
 						<p>本文中的内容来自Gradle User Guide，由于本人英文水平有限，所以部分翻译内容可能不准确。</p>
-						<p> <strong>Gradle提供</strong>
-						</p>
-
-						<p>1.一个像ant一样，通用的灵活的构建工具。</p>
-
-						<p>2.一种可切换的，像maven一样的基于约定的构建框架，却又从不锁住你。</p>
-
-						<p>3.对多项目构建的强大支持。</p>
-
-						<p>4.强大的依赖管理（基于Apache Ivy）。</p>
-
-						<p>5.全力支持已有的Maven或者Ivy仓库基础建设。</p>
-
-						<p>6.支持传递性依赖管理，在不需要远程仓库或者pom.xml或者ivy配置文件的前提下。</p>
-
-						<p>7.ant的任务和构建是gradle的一等公民。</p>
-
-						<p>8.基于groovy脚本构建，其build脚本使用groovy语言编写。</p>
-
-						<p>9.具有广泛的领域模型支持你的构建。</p>
-
-						<p> <strong>前提条件：</strong>
-						</p>
-
-						<p>
-							1.官方网站下载Gradle：
-							<a href="http://www.gradle.org/downloads">http://www.gradle.org/downloads</a>
-						</p>
-
-						<p>2.安装Gradle</p>
-
-						<p>3.添加GRADLE_HOME/bin到环境变量</p>
-
-						<p>4.在命令行中输入：gradle –v，测试是否安装成功</p>
 					</div>
+					<p> <h2>Gradle提供</h2>
+					</p>
+
+					<p>1.一个像ant一样，通用的灵活的构建工具。</p>
+
+					<p>2.一种可切换的，像maven一样的基于约定的构建框架，却又从不锁住你。</p>
+
+					<p>3.对多项目构建的强大支持。</p>
+
+					<p>4.强大的依赖管理（基于Apache Ivy）。</p>
+
+					<p>5.全力支持已有的Maven或者Ivy仓库基础建设。</p>
+
+					<p>6.支持传递性依赖管理，在不需要远程仓库或者pom.xml或者ivy配置文件的前提下。</p>
+
+					<p>7.ant的任务和构建是gradle的一等公民。</p>
+
+					<p>8.基于groovy脚本构建，其build脚本使用groovy语言编写。</p>
+
+					<p>9.具有广泛的领域模型支持你的构建。</p>
+
+					<p> <h2>前提条件：</h2>
+					</p>
+
+					<p>
+						1.官方网站下载Gradle：
+						<a href="http://www.gradle.org/downloads">http://www.gradle.org/downloads</a>
+					</p>
+
+					<p>2.安装Gradle</p>
+
+					<p>3.添加GRADLE_HOME/bin到环境变量</p>
+
+					<p>4.在命令行中输入：gradle –v，测试是否安装成功</p>
 
 					<p id="Build Script Basics">
-						<strong>6 Build Script Basics（构建脚本基础）</strong>
+						<h2>6 Build Script Basics（构建脚本基础）</h2>
 					</p>
 
 					<p>
@@ -360,7 +359,7 @@ task other << {
 						<strong>6.13 Configure by DAG</strong>
 					</p>
 					<p id="Java Quickstart">
-						<strong>7 Java Quickstart（使用Java）</strong>
+						<h2>7 Java Quickstart（使用Java）</h2>
 					</p>
 					<p>
 						<strong>7.1 The Java plugin(Java插件)</strong>
@@ -589,8 +588,9 @@ dependencies {
 compile project(':shared')
 }</pre>
 					<p id="What is Dependency Management">
-						<strong>8.1 What is dependency management?（什么是依赖管理）</strong>
+						<h2>8 Dependency Management Basics（依赖管理基础）</h2>
 					</p>
+					<strong>8.1 What is dependency management?（什么是依赖管理）</strong>
 
 					<p>
 						大致上，依赖管理是由两部分组成。首先，Gradle需要知道了解你的项目中需要build或者run的东西，以方便它找到他们。我们把它叫做项目依赖的“输入文件”。其次，Gradle需要build和upload你项目中产生的东西。我们叫做项目发布的“输出文件”。
