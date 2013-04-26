@@ -73,6 +73,10 @@
     color: #87008c;
 }
 
+.logo{
+    font-family: 'Cinzel Decorative', cursive;
+}
+
 .article-list {
     text-align: left;
     margin-left: 10px;

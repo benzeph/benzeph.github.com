@@ -7,6 +7,7 @@
 	<link id="scrollUpTheme" rel="stylesheet" href="../css/pill.css">
 	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="../css/bootstrap-responsive.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative:900' rel='stylesheet' type='text/css'>
 	<style type="text/css">body{font-family:Arial,Helvetica,sans-serif,"宋体"}</style>
 </head>
 <body>
@@ -18,6 +19,32 @@
 						<span class="muted">文章列表</span>
 					</a>
 				</li>
+				<li class="dropdown">
+					<a id="classifyDropdown" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+						分类 <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="classifyDropdown">
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">编码</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">敏捷</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">管理</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">业务</a>
+						</li>
+						<li role="presentation" class="divider"></li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">其他</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav pull-right">
+				<a class="brand logo" href="../index.html">Zeph</a>
 			</ul>
 		</div>
 	</div>
@@ -27,10 +54,10 @@
 				<div class="article">
 					<h1>用户故事与敏捷方法(2)</h1>
 					<div class="well">
-						续上一部分<a href="user-stories-applied-for-agile-software-development-part-1.html">用户故事与敏捷方法(1)</a>
+						续上一部分
+						<a href="user-stories-applied-for-agile-software-development-part-1.html">用户故事与敏捷方法(1)</a>
 					</div>
-					<p>
-						<strong>8 估算用户故事</strong>
+					<p> <strong>8 估算用户故事</strong>
 					</p>
 
 					<p>估算故事的最好方法具有如下特点：</p>
@@ -47,8 +74,7 @@
 
 					<p>(6)    可以用来定制发布计划</p>
 
-					<p>
-						<strong>故事点</strong>
+					<p> <strong>故事点</strong>
 					</p>
 
 					<p>
@@ -528,6 +554,7 @@
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.scrollUp.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-dropdown.js"></script>
 	<script type="text/javascript">
 		$(function () {
 			$.scrollUp();
