@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Zeph's Blog | Professional Thoughts</title>
+	<link rel="stylesheet" type="text/css" href="../css/zeph.css">
+	<link id="scrollUpTheme" rel="stylesheet" href="../css/pill.css">
+	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="../css/bootstrap-responsive.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative:900' rel='stylesheet' type='text/css'>
+	<style type="text/css">body{font-family:Arial,Helvetica,sans-serif,"宋体"}</style>
+</head>
+<body>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<ul class="nav">
+				<li>
+					<a href="../index.html">
+						<span class="muted">文章列表</span>
+					</a>
+				</li>
+				<li class="dropdown">
+					<a id="classifyDropdown" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+						分类 <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="classifyDropdown">
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">编码</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">敏捷</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">管理</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">业务</a>
+						</li>
+						<li role="presentation" class="divider"></li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">其他</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav pull-right">
+				<a class="brand logo" href="../index.html">Zeph</a>
+			</ul>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span9">
+				<div class="article">
+					<h1>用户故事与敏捷方法(3)</h1>
+					<div class="well">
+						续上一部分
+						<a href="user-stories-applied-for-agile-software-development-part-1.html">用户故事与敏捷方法(1)</a>
+						<a href="user-stories-applied-for-agile-software-development-part-2.html">用户故事与敏捷方法(2)</a>
+					</div>
+					<p> <h2>12 故事不是什么</h2>
+					</p>
+
+					<p> <h4>用户故事不是IEEE830（软件需求规格指南文档）</h4>
+						
+					</p>
+
+					<p>
+						人们总是倾向于通过思考，思考，再思考，构想出一个好的系统，然后把所有需求编写成“系统应该…..”听起来会比“如果可能，系统将……”好得多，但第二种说法却能更好地刻画绝大多数项目的实际情况。
+					</p>
+
+					<p>
+						不幸的是，以这种方式编写系统的所有需求实际是不可能的任务。用户看到在开发的软件时，会有有效和重要的反馈循环。用户看到软件时，他们会想出新的电子，并且改变他们之前的想法。
+					</p>
+
+					<p>
+						IEEE830样式的需求侧重于关注需求的检测列表，而不是用户的目标。需求清单不会像故事那样给读者一个对产品的整体理解。读需求列表时，你会情不自禁的去考虑解决方案。
+					</p>
+
+					<p>
+						IEEE830文档是需求列表，故事则描述用户目标。通过从客户角度关注新产品的目标，而不是新产品的特征列表，我们往往能够设计出更好的解决方案，更好地满足用户的需求。
+					</p>
+
+					<p>
+						IEEE830在写下需求时，每个需求的成本是不可见的。而每个故事开始前都会有一个估算。客户知道团队的速率，也知道每个故事的故事点数。编写完足够填满所有迭代的故事后，她知道自己的任务已经完成了。
+					</p>
+
+					<p>
+						<h4>如何以及为什么要用该功能</h4>
+					</p>
+
+					<p>
+						需求列表更大的问题是，列表上的项目描述了软件的行为，而不是用户的行为或目标，需求列表很少会回答“但是，如何使用以及为什么有人需要这个功能？”
+					</p>
+
+					<p>
+						<h4>用户故事不是用例</h4>
+					</p>
+
+					<p>
+						故事和用例之间最明显的区别是它们的范围。两者的大小都是以交付商业价值为目标，但故事的范围更小，因为我们对它们的大小有限制，以便用于安排工作。用例覆盖的范围几乎总是比故事大。
+					</p>
+
+					<p>用户故事和用例的不同还在于它们的完整性。</p>
+
+					<p>故事对应于用例的主要成功场景，而故事测试对应于用例扩展。</p>
+
+					<p>
+						用例和故事之间另一个更重要的区别是它们的寿命。只要产品在开发或维护，用例常常作为永久性的“工件”持续存在。另一个方面，故事不会超过包含它们的迭代。虽然可以对故事卡存档，许多团队却采用一种简单的处理方式，即撕掉他们。
+					</p>
+
+					<p>
+						用例比较容易包括用户界面的细节。原因：用例经常导致大量纸张的使用，并且没有其他适合的地方存放用户界面需求时，它们最终边会存放到用例上。其次，用例编写者会过早地关注软件实现，而不是去关注商业目标。
+					</p>
+
+					<p>
+						用例和用户故事还有一个区别是，它们的目的不同。用例编写成客户和开发人员都可以接受的格式，如此大家都可以读懂并达成一致。其目的是记录客户和开发团队之间的协议。而编写用户故事时为了更方便发布计划和迭代计划，并且它充当着用户具体需求对话的占位符。
+					</p>
+
+					<p>用例一般写成分析活动的结果。用户故事则写成注释，用以启动分析谈话。</p>
+
+					<p>
+						<h4>用户故事不是场景</h4>
+					</p>
+
+					<p>这里的场景是用户与计算机交互的详细描述。</p>
+
+					<p>用户故事和场景的主要区别是范围和细节。场景包括更多细节，它们的范围通常涵盖多个故事。前面的示例场景包含许多可能的故事。</p>
+
+				</div>
+				<div id="comments">
+					<!-- Duoshuo Comment BEGIN -->
+					<div class="ds-thread"></div>
+					<script type="text/javascript">
+						var duoshuoQuery = {short_name:"benzeph"};
+							(function() {
+								var ds = document.createElement('script');
+								ds.type = 'text/javascript';ds.async = true;
+								ds.src = 'http://static.duoshuo.com/embed.js';
+								ds.charset = 'UTF-8';
+								(document.getElementsByTagName('head')[0] 
+								|| document.getElementsByTagName('body')[0]).appendChild(ds);
+							})();
+						</script>
+					<!-- Duoshuo Comment END -->
+				</div>
+				<div class="footer">
+					本博客基于
+					<a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a>
+					框架开发，使用
+					<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>
+					做代码展示，部署在
+					<a href="http://pages.github.com/">Github Page</a>
+					上，欢迎大家访问
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.scrollUp.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$.scrollUp();
+		});
+	</script>
+</body>
+</html>
