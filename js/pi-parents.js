@@ -59,12 +59,12 @@ function reloadValidate(){
 function calculatePi(rowID){
     if(rowID > 0){
         var locus = piParentsFindObj("locus_" + (rowID - 1),document);
-        var F1 = getAllete("/expriment/" + locus.value,"a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
-        var F2 = getAllete("/expriment/" + locus.value,"a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
-        var M1 = getAllete("/expriment/" + locus.value,"a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
-        var M2 = getAllete("/expriment/" + locus.value,"a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
-        var C1 = getAllete("/expriment/" + locus.value,"a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
-        var C2 = getAllete("/expriment/" + locus.value,"a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
+        var F1 = getAllete("/expriment/" + locus.value + ".xml","a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
+        var F2 = getAllete("/expriment/" + locus.value + ".xml","a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
+        var M1 = getAllete("/expriment/" + locus.value + ".xml","a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
+        var M2 = getAllete("/expriment/" + locus.value + ".xml","a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
+        var C1 = getAllete("/expriment/" + locus.value + ".xml","a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
+        var C2 = getAllete("/expriment/" + locus.value + ".xml","a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
         var pi = 0;
         if(C1.value==C2.value){
             if(F1.value==F2.value&&F1.value==C1.value&&(M1.value==F1.value||M2.value==F1.value)){
