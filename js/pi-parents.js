@@ -66,9 +66,9 @@ function calculatePi(rowID){
         var C1 = getAllete("/expriment/" + locus.value + ".xml","a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
         var C2 = getAllete("/expriment/" + locus.value + ".xml","a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
         var pi = 0;
-        if(C1.value==C2.value){
-            if(F1.value==F2.value&&F1.value==C1.value&&(M1.value==F1.value||M2.value==F1.value)){
-                pi = 1/C1.value;
+        if(C1==C2){
+            if(F1==F2&&F1==C1&&(M1==F1||M2==F1)){
+                pi = 1/C1;
             }
         }
         var PI = piParentsFindObj("PI_" + (rowID - 1),document);
