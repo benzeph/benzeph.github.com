@@ -58,6 +58,7 @@ function reloadValidate(){
 
 function calculatePi(rowID){
     if(rowID > 0){
+        alert("/expriment/");
         var locus = piParentsFindObj("locus_" + (rowID - 1),document);
         alert("/expriment/" + locus.value + ".xml");
         var F1 = getAllete("/expriment/" + locus.value + ".xml","a" + piParentsFindObj("F1_" + (rowID - 1),document).value);
