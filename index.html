@@ -37,6 +37,8 @@
 				window.location.href="articles/continuous-integration.html";
 			}else if(article == "Maven的使用"){
 				window.location.href="articles/use-maven.html";
+			}else if(article == "实现模式"){
+				window.location.href="articles/implementation-patterns.html";
 			}
 		}
 	</script>
@@ -78,7 +80,7 @@
 				<a class="brand logo" href="index.html">Zeph</a>
 			</ul>
 			<div class="navbar-form">
-				<input id="searchBox" type="text" class="span2" data-provide="typeahead" data-items="4" data-source='["常用Git开发命令和开发模式指南","Gradle使用指南（译）","代码整洁","用户故事与敏捷方法(1)","用户故事与敏捷方法(2)","用户故事与敏捷方法(3)","测试驱动开发","持续集成CI","Maven的使用"]'>
+				<input id="searchBox" type="text" class="span2" data-provide="typeahead" data-items="4" data-source='["常用Git开发命令和开发模式指南","Gradle使用指南（译）","代码整洁","用户故事与敏捷方法(1)","用户故事与敏捷方法(2)","用户故事与敏捷方法(3)","测试驱动开发","持续集成CI","Maven的使用","实现模式"]'>
 				<button class="btn" onclick="goToArticle()">Go</button>
 			</div>
 		</div>
@@ -87,6 +89,12 @@
 		<div class="row-fluid">
 			<div class="span9">
 				<div class="article-list">
+					<a href="implementation-patterns.html" class="grey-link">
+						<h1 class="muted">实现模式</h1>
+					</a>
+					<div class="abstract">
+						《实现模式》这本书介于“设计模式”和Java语言手册之间。相对“设计模式”，《实现模式》中的模式粒度更小。编程时每过几秒就可能用上一个模式。
+					</div>
 					<a href="articles/user-stories-applied-for-agile-software-development-part-3.html" class="grey-link">
 						<h1>用户故事与敏捷方法(3)</h1>
 					</a>
