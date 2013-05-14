@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zeph's Blog | Professional Thoughts</title>
+	<link rel="stylesheet" type="text/css" href="../css/zeph.css">
+	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="../css/bootstrap-responsive.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/shCoreDefault.css"/>
+	<link id="scrollUpTheme" rel="stylesheet" href="../css/pill.css">
+	<link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative:900' rel='stylesheet' type='text/css'>
+	<style type="text/css">html{font-family:Arial,Helvetica,sans-serif,"宋体"}</style>
+</head>
+<body>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<ul class="nav">
+				<li>
+					<a href="../index.html">
+						<span class="muted">文章列表</span>
+					</a>
+				</li>
+				<li class="dropdown">
+					<a id="classifyDropdown" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+						分类 <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="classifyDropdown">
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">编码</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">敏捷</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">管理</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">业务</a>
+						</li>
+						<li role="presentation" class="divider"></li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">其他</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav pull-right">
+				<a class="brand logo" href="../index.html">Zeph</a>
+			</ul>
+			<div class="navbar-form">
+				<input id="searchBox" type="text" class="span2" data-provide="typeahead" data-items="4" data-source='["常用Git开发命令和开发模式指南","Gradle使用指南（译）","代码整洁","用户故事与敏捷方法(1)","用户故事与敏捷方法(2)","用户故事与敏捷方法(3)","测试驱动开发","持续集成CI","Maven的使用","实现模式"]'>
+				<button class="btn" onclick="goToArticle()">Go</button>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span9">
+				<div class="article">
+					<h1>极限编程</h1>
+
+				</div>
+				<div id="comments">
+					<!-- Duoshuo Comment BEGIN -->
+					<div class="ds-thread"></div>
+					<script type="text/javascript">
+					var duoshuoQuery = {short_name:"benzeph"};
+						(function() {
+							var ds = document.createElement('script');
+							ds.type = 'text/javascript';ds.async = true;
+							ds.src = 'http://static.duoshuo.com/embed.js';
+							ds.charset = 'UTF-8';
+							(document.getElementsByTagName('head')[0] 
+							|| document.getElementsByTagName('body')[0]).appendChild(ds);
+						})();
+					</script>
+					<!-- Duoshuo Comment END -->
+				</div>
+				<div class="footer">
+					本博客基于
+					<a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a>
+					框架开发，使用
+					<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>
+					做代码展示，部署在
+					<a href="http://pages.github.com/">Github Page</a>
+					上，欢迎大家访问
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/zeph.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.scrollUp.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-typeahead.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$.scrollUp();
+		});
+	</script>
+</body>
+</html>
